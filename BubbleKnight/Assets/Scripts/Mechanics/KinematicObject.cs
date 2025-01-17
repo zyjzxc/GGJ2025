@@ -103,7 +103,7 @@ namespace Platformer.Mechanics
         {
             ////if already falling, fall faster than the jump speed, otherwise use normal gravity.
             //if (velocity.y < 0)
-            //    velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+            // velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
             //else
             //    velocity += Physics2D.gravity * Time.deltaTime;
 
@@ -112,16 +112,17 @@ namespace Platformer.Mechanics
             IsGrounded = true;
 
             var deltaPosition = velocity * Time.deltaTime;
+            var move = new Vector2(deltaPosition.x, 0);
+            body.position = body.position + move.normalized * move.magnitude;
+            //var moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
 
-            var moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
+            //var move = moveAlongGround * deltaPosition.x;
 
-            var move = moveAlongGround * deltaPosition.x;
+            //PerformMovement(move, false);
 
-            PerformMovement(move, false);
+            //move = Vector2.up * deltaPosition.y;
 
-            move = Vector2.up * deltaPosition.y;
-
-            PerformMovement(move, true);
+            //PerformMovement(move, true);
 
         }
 
