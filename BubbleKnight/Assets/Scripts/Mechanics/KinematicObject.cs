@@ -101,15 +101,15 @@ namespace Platformer.Mechanics
 
         protected virtual void FixedUpdate()
         {
-            //if already falling, fall faster than the jump speed, otherwise use normal gravity.
-            if (velocity.y < 0)
-                velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
-            else
-                velocity += Physics2D.gravity * Time.deltaTime;
+            ////if already falling, fall faster than the jump speed, otherwise use normal gravity.
+            //if (velocity.y < 0)
+            //    velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+            //else
+            //    velocity += Physics2D.gravity * Time.deltaTime;
 
             velocity.x = targetVelocity.x;
 
-            IsGrounded = false;
+            IsGrounded = true;
 
             var deltaPosition = velocity * Time.deltaTime;
 
@@ -140,7 +140,7 @@ namespace Platformer.Mechanics
                     //is this surface flat enough to land on?
                     if (currentNormal.y > minGroundNormalY)
                     {
-                        IsGrounded = true;
+                        IsGrounded = false;
                         // if moving up, change the groundNormal to new surface normal.
                         if (yMovement)
                         {
