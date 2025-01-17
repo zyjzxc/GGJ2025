@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Role : MonoBehaviour
 {
-    public Vector2 speed = new Vector2(1,1);
+    public Vector2 speed = new Vector2(10,10);
     public Vector2 attackVector = new Vector2(0, 50);
     public float attackSpeed = 1;
     private RectTransform rectTransform;
@@ -23,8 +23,8 @@ public class Role : MonoBehaviour
 
     public void Move(Vector2 movement)
     {
-        movement.Normalize();
-        rectTransform.anchoredPosition += new Vector2(movement.x * speed.x, movement.y * speed.y);
+        
+        this.transform.position += new Vector3(movement.x * speed.x, 0, 0);
     }
 
     public void Attack()
@@ -32,7 +32,7 @@ public class Role : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(111);
     }

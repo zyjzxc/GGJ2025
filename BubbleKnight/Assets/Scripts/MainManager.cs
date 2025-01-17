@@ -8,7 +8,7 @@ public class MainManager : MonoBehaviour
 
     public Role role;
 
-    public float BgSpeed = 200.0f;
+    public float BgSpeed = 0.5f;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,14 +21,10 @@ public class MainManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(2))
-        {
+
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             Vector2 movement = new Vector2(moveHorizontal, moveVertical);
             role.Move(movement);
-
-
-        }
     }
 }
