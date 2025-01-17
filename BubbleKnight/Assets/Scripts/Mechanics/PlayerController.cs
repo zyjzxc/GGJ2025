@@ -55,7 +55,17 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = Input.GetAxis("Horizontal");
+                if(Input.GetKey(KeyCode.D))
+                {
+                    move.x = 1;
+                } else if (Input.GetKey(KeyCode.A))
+                {
+                    move.x = -1;
+                } else
+                {
+                    move.x = 0;
+                }
+                //move.x = Input.GetAxis("Horizontal");
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
                     jumpState = JumpState.PrepareToJump;
                 else if (Input.GetButtonUp("Jump"))

@@ -105,7 +105,7 @@ namespace Platformer.Mechanics
             //if (velocity.y < 0)
             // velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
             //else
-            //    velocity += Physics2D.gravity * Time.deltaTime;
+            //velocity += Physics2D.gravity * Time.deltaTime;
 
             velocity.x = targetVelocity.x;
 
