@@ -21,11 +21,14 @@ public class MainManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical"); 
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        role.Move(movement);
+        if (Input.GetMouseButton(2))
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+            role.Move(movement);
 
 
+        }
     }
 }
