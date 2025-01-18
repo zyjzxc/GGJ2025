@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    public List<GameObject> health;
+    public List<GameObject> healthUI;
+
+    public GameObject speedUI;
+    public GameObject targetUI;
 
     private void Awake()
     {
@@ -30,16 +34,26 @@ public class UIManager : MonoBehaviour
 
     public void SetHealth(float healthCount)
     {
-        for (int i = 0; i < health.Count; i++)
+        for (int i = 0; i < healthUI.Count; i++)
         {
             if(i+1 > healthCount)
             {
-                health[i].GetComponent<Image>().color = Color.black;
+                healthUI[i].GetComponent<Image>().color = Color.black;
                 Debug.Log("修改血量成黑色");
             } else
             {
-                health[i].GetComponent<Image>().color = Color.white;
+                healthUI[i].GetComponent<Image>().color = Color.white;
             }
         }
+    }
+
+    public void SetSpeed(int speed)
+    {
+        speedUI.GetComponent<TextMeshProUGUI>().text = "Speed: " + speed + " m/s";
+    }
+
+    public void SetTarget(float now, float target)
+    {
+        targetUI.GetComponent<TextMeshProUGUI>().text = now + " m" + " / " + target + " m";
     }
 }
