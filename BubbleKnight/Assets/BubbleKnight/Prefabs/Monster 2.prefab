@@ -261,7 +261,7 @@ MonoBehaviour:
   monsterState: 0
   point: 3
   health2: 1
-  moveSpeed: 2
+  moveSpeed: 1
   floatSpeed: 1
   floatAmplitude: 0.5
   buiTime: 2

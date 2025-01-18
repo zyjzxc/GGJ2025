@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 enum GameState
@@ -13,9 +14,9 @@ enum GameState
 
 public struct GameData
 {
-    float m0;
-
-    int dangrousSpeed;
+    public GameObject[] monsterPrefabs;
+    public float dangerrousSpeed;
+    public float levelHeight;
 }
 
 public class GameManager : MonoBehaviour
@@ -32,11 +33,34 @@ public class GameManager : MonoBehaviour
     public int nowLvl = 0;
 
     // 500, 1000, 1500, 2500, 4000, 6000, 1000
-    const int MAX_LVL = 8;
-    public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000, 15000, 25000};
-    public float [] dangerousSpeeds = { 5, 15, 30, 60, 80, 120, 170, 230, 300};
+    const int MAX_LVL = 6;
+    public GameObject[] monsterPrefabs0;
+    public GameObject[] monsterPrefabs1;
+    public GameObject[] monsterPrefabs2;
+    public GameObject[] monsterPrefabs3;
+    public GameObject[] monsterPrefabs4;
+    public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000};
+    public float [] dangerousSpeeds = { 5, 15, 30, 60, 80, 120, 170};
+    public int[] maxMonsterNum = { 5, 6, 6, 8, 8, 8, 8 };
+
+    public int GetMaxMonsterNum()
+    {
+        return maxMonsterNum[nowLvl];
+    }
 
     public int continueHitTime = 0;
+
+    public GameObject[] GetMonsterPrefabs()
+    {
+        switch (nowLvl) {
+            case 0: return monsterPrefabs0;
+            case 1: return monsterPrefabs1;
+            case 2: return monsterPrefabs2;
+            case 3: return monsterPrefabs3;
+            case 4: return monsterPrefabs4;
+            default: return monsterPrefabs4;
+        }
+    }
 
     public bool GetDangerous()
     {
