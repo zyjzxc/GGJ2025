@@ -44,7 +44,7 @@ public class MonsterController : MonoBehaviour
             Die();
     }
 
-    void Die()
+    virtual protected void Die()
     {
         GameManager._instance.AddSpeed(point);
         Destroy(gameObject, 0.1f);

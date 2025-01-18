@@ -20,11 +20,12 @@ public struct GameData
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager _instance; 
+    public static GameManager _instance;
+    const int MAX_HEART = 3;
     public const float MAX_HEIGHT = 10000;
     public float nowHeight = 0;
     public float upSpeed = 0;
-    public int health = 3;
+    public int health = MAX_HEART;
 
     const float slowSpeedGapTime = 0.5f;
     float slowTimer = 0;
@@ -102,6 +103,13 @@ public class GameManager : MonoBehaviour
     public void AddSpeed(int sp)
     {
         upSpeed += sp;
+    }
+
+    public void AddHearth(int sp)
+    {
+        health += sp;
+        health = Mathf.Min(health, MAX_HEART);
+        UIManager.instance.SetHealth(health);
     }
 
     public void SlowDown()
