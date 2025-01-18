@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     public void SlowDown()
     {
-        upSpeed = (int)((float)upSpeed * 0.9f);
+        upSpeed = upSpeed * 0.9f;
     }
 
     public void TakeDamage()
