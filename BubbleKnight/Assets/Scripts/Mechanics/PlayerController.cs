@@ -72,7 +72,6 @@ namespace Platformer.Mechanics
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
-                    Debug.Log(222);
                 }
             }
             else

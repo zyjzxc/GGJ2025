@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public enum RoleState
 {
@@ -207,6 +208,7 @@ public class RoleControl : MonoBehaviour
     {
         if(transform.position.y < minY)
         {
+            transform.position = new Vector3(transform.position.x, minY + 0.01f, transform.position.z);
             GameManager._instance.SlowDown();
             StopAttack(true);
         }
@@ -217,6 +219,7 @@ public class RoleControl : MonoBehaviour
     {
         if (roleState == RoleState.Dead)
             return;
+        GameManager._instance.ConitnueHit(isMiss);
         weapon.SetActive(false);
         roleState = RoleState.PostAttack;
         move.y = isMiss ? attackSpeed*0.5f : attackSpeed;

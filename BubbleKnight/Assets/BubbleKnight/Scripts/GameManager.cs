@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000 };
     public float [] dangerousSpeeds = { 20, 20, 30, 60, 80, 120, 150 };
 
+    public int continueHitTime = 0;
+
     public bool GetDangerous()
     {
         return upSpeed < dangerousSpeeds[nowLvl];
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     void GameStart()
     {
+        continueHitTime = 0;
         nowHeight = 0;
         health = 3;
         nowLvl = 0;
@@ -87,6 +90,21 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("ÓÎÏ·½áÊø");
         upSpeed = 0;
+    }
+
+    public void ConitnueHit(bool isMiss)
+    {
+        if (isMiss)
+        {
+            continueHitTime = 0;
+            return;
+        }
+        continueHitTime ++;
+        if (continueHitTime % 10 == 0)
+        {
+            upSpeed += continueHitTime / 2.0f;
+        }
+
     }
 
     // Update is called once per frame
@@ -166,7 +184,6 @@ public class GameManager : MonoBehaviour
             return;
         health--;
         UIManager.instance.SetHealth(health);
-        Debug.Log("¿ÛÑª" + health);
         if (health == 0)
         {
             killRole();

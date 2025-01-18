@@ -23,8 +23,8 @@ public class BackgroundScroller : MonoBehaviour
     void Update()
     {
         // 计算背景图的偏移量
-        scrollSpeed = GameManager._instance.upSpeed;
-        float offset = -backgroundRenderer1.transform.position.y + Time.deltaTime * scrollSpeed * 0.1f;
+        scrollSpeed = GameManager._instance.upSpeed * 0.1f;
+        float offset = -backgroundRenderer1.transform.position.y + Time.deltaTime * scrollSpeed;
 
 
         // 计算背景图的新位置
