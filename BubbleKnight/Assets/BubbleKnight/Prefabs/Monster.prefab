@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2114885224803525304}
   - component: {fileID: 7868219253117766950}
   - component: {fileID: 3960069196016434504}
-  - component: {fileID: -1100822840616987898}
+  - component: {fileID: -829065445134176278}
   m_Layer: 7
   m_Name: Monster
   m_TagString: Player
@@ -130,7 +130,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -140,7 +140,7 @@ CapsuleCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -246,7 +246,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-1100822840616987898
+--- !u!114 &-829065445134176278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,8 +255,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7932485592409327062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce90efe5c972af4faa4472ad79b24a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 46904e181f3a5894aba7df67091fc03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monsterState: 0
-  id: 0
+  point: 3
+  moveSpeed: 2
+  floatSpeed: 1
+  floatAmplitude: 1
