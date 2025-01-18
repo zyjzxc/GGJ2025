@@ -2,21 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalMonster : MonsterController
+public class Prop : NormalMonster
 {
-    public float moveSpeed = 2.0f; // 左右移动速度
-    public float floatSpeed = 1.0f; // 上下浮动速度
-    public float floatAmplitude = 1.0f; // 上下浮动幅度
-    protected float initialY;
-    protected float floatTimer = 0.0f;
-    protected bool movingRight = true;
-
-
+    // Start is called before the first frame update
     void Start()
     {
-        initialY = transform.position.y;
+        
     }
-
 
     void Update()
     {
@@ -46,8 +38,6 @@ public class NormalMonster : MonsterController
         {
             return true;
         }
-
-
         return false;
     }
 }

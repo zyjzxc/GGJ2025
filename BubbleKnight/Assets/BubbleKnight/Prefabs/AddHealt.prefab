@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1879852159437573533}
   - component: {fileID: 69309783984617156}
   - component: {fileID: 3744774805445547231}
-  - component: {fileID: 8920003891766549356}
+  - component: {fileID: 7280525472688080330}
   m_Layer: 8
   m_Name: AddHealt
   m_TagString: Player
@@ -246,7 +246,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8920003891766549356
+--- !u!114 &7280525472688080330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2981076253712547434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46904e181f3a5894aba7df67091fc03b, type: 3}
+  m_Script: {fileID: 11500000, guid: cca679071edae274bbba516c6c6084f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monsterState: 0
