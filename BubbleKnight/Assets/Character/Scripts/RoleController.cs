@@ -192,6 +192,8 @@ public class RoleControl : MonoBehaviour
 
     public void StopAttack(bool isMiss)
     {
+        if (roleState == RoleState.Dead)
+            return;
         weapon.SetActive(false);
         roleState = RoleState.PostAttack;
         move.y = isMiss ? attackSpeed*0.5f : attackSpeed;
