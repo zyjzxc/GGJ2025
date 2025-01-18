@@ -156,6 +156,7 @@ public class RoleControl : MonoBehaviour
         }
         else // Íê³ÉÏÂÂä
         {
+            GameManager._instance.SlowDown();
             StopAttack();
         }
     }
