@@ -20,7 +20,7 @@ public struct GameData
 
 public class GameManager : MonoBehaviour
 {
-
+    public static GameManager _instance; 
     public const int MAX_HEIGHT = 10000;
     public int nowHeight = 0;
     public int upSpeed = 0;
@@ -32,15 +32,25 @@ public class GameManager : MonoBehaviour
 
     GameState state = GameState.Prepare;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+    }
+
     void Start()
     {
+        
         GameReset();
     }
 
     void GameReset()
     {
         nowHeight = 0;
-        upSpeed = 0;
+        upSpeed = 5;
         state = GameState.Prepare;
         health = 3;
     }

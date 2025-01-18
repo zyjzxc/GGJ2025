@@ -38,6 +38,7 @@ public class RoleControl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("碰怪" + collision.name);
+        StopAttack();
     }
 
     // Update is called once per frame
@@ -90,10 +91,11 @@ public class RoleControl : MonoBehaviour
     {
         if (!CanAttack())
             return;
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             move.y = -attackSpeed;
             roleState = RoleState.Attack;
+            Debug.Log("攻击");
         }
     }
 
@@ -107,13 +109,19 @@ public class RoleControl : MonoBehaviour
         if (transform.position.y > minY) // 下落
         {
             // TODO检测怪物
-
+            Debug.Log("下落中");
         }
         else // 完成下落
         {
-            roleState = RoleState.PostAttack;
-            move.y = attackSpeed;
+            Debug.Log("完成下落");
+            StopAttack();
         }
+    }
+
+    private void StopAttack()
+    {
+        roleState = RoleState.PostAttack;
+        move.y = attackSpeed;
     }
 
     private void PostAttacking()
