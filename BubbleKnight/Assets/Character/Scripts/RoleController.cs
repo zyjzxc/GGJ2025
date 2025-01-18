@@ -64,6 +64,7 @@ public class RoleControl : MonoBehaviour
         if (roleState == RoleState.Dead)
         {
             spriteRenderer.sprite = spriteDeath;
+            spriteRenderer.flipX = false;
             move = new Vector2(0, 0);
             body.velocity = move;
             return;
