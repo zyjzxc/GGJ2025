@@ -16,7 +16,7 @@ public class BuiBuiBui : NormalMonster
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         base.Update();
         buiTimeAdd += Time.deltaTime;

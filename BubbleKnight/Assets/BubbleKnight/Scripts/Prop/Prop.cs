@@ -10,7 +10,7 @@ public class Prop : NormalMonster
         
     }
 
-    void Update()
+    protected override void Update()
     {
         // ◊Û”““∆∂Ø
         float horizontalMovement = moveSpeed * Time.deltaTime * (movingRight ? 1 : -1);
