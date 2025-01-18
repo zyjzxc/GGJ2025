@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 enum GameState
@@ -24,6 +25,9 @@ public class GameManager : MonoBehaviour
     public int nowHeight = 0;
     public int upSpeed = 0;
     public int health = 3;
+
+    const float slowSpeedGapTime = 0.5f;
+    float slowTimer = 0;
 
 
     GameState state = GameState.Prepare;
@@ -54,10 +58,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //int dangrousSpeed = nowHeight / 10;
+        if (state != GameState.Running) return;
+
         float deltaTime = Time.deltaTime;
+
+        // slow speed
+        slowTimer += deltaTime;
+        if (slowTimer > slowSpeedGapTime)
+        {
+            upSpeed--;
+            slowTimer = 0;
+        }
+
+        //int dangrousSpeed = nowHeight / 10;
         nowHeight += (int)(deltaTime * upSpeed);
-        if (state == GameState.Running)
+        //if (state == GameState.Running)
         {
             if (nowHeight >= MAX_HEIGHT)
             {
@@ -65,6 +80,11 @@ public class GameManager : MonoBehaviour
                 GameEnd();
             }
         }
+    }
+
+    void AddSpeed(int sp)
+    {
+        upSpeed += sp;
     }
 
     void TakeDamage()
