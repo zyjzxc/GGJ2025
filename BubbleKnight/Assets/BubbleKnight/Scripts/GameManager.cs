@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     float slowTimer = 0;
 
 
+    public RoleControl roleControl;
+
     GameState state = GameState.Prepare;
     // Start is called before the first frame update
 

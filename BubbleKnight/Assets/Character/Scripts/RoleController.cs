@@ -31,15 +31,16 @@ public class RoleControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager._instance.roleControl = this;
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("ล๖นึ" + collision.name);
-        StopAttack();
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Debug.Log("ล๖นึ" + collision.name);
+    //    StopAttack();
+    //}
 
     // Update is called once per frame
     void Update()
@@ -118,7 +119,7 @@ public class RoleControl : MonoBehaviour
         }
     }
 
-    private void StopAttack()
+    public void StopAttack()
     {
         roleState = RoleState.PostAttack;
         move.y = attackSpeed;

@@ -204,50 +204,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: maxSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: boundMax.y
-      value: 2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: attackSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573519856399284639, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.72463655
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573519856399284639, guid: 5f1f7acf29eceb744892afdaae399b0d,
+    - target: {fileID: 4344286086391717312, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.049205
+      value: 0.7011646
       objectReference: {fileID: 0}
-    - target: {fileID: 6573519856399284639, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.024075747
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573519856399284639, guid: 5f1f7acf29eceb744892afdaae399b0d,
+    - target: {fileID: 4344286086391717312, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.060044706
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573519856399284639, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573519856399284639, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.56
+      value: -0.1494177
       objectReference: {fileID: 0}
     - target: {fileID: 7127598632236775068, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}
@@ -299,17 +264,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7127598632236775068, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257682679863315196, guid: 5f1f7acf29eceb744892afdaae399b0d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 16eb794148a7dbf4d908b2ed211e8d44,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -940,6 +894,7 @@ MonoBehaviour:
   nowHeight: 0
   upSpeed: 0
   health: 3
+  roleControl: {fileID: 0}
 --- !u!1 &1774151492
 GameObject:
   m_ObjectHideFlags: 0
