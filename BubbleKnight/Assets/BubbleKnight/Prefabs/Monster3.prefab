@@ -262,4 +262,4 @@ MonoBehaviour:
   point: 3
   moveSpeed: 2
   floatSpeed: 1
-  floatAmplitude: 1
+  floatAmplitude: 2

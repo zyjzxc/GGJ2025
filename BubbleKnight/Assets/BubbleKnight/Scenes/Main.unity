@@ -197,6 +197,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2531417205472288116, guid: 5f1f7acf29eceb744892afdaae399b0d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2776986209421244646, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}
       propertyPath: m_Size.x
@@ -953,6 +958,7 @@ MonoBehaviour:
   - {fileID: 1345644831}
   - {fileID: 35558397}
   maxMonsters: 5
+  activeMonsters: []
 --- !u!114 &1754240614
 MonoBehaviour:
   m_ObjectHideFlags: 0
