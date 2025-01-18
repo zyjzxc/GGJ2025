@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
 
     public RoleControl roleControl;
+    public MonsterSpawner monsterSpawner;
     public float wuDiTime = 0.5f;
 
     GameState state = GameState.Prepare;
@@ -173,5 +174,10 @@ public class GameManager : MonoBehaviour
         {
             roleControl.AddWuDiTime(wuDiTime);
         }
+    }
+
+    public void Boom(Vector3 p, float boomRange)
+    {
+        monsterSpawner.Boom(p , boomRange);
     }
 }

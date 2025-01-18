@@ -12,8 +12,11 @@ public class MonsterSpawner : MonoBehaviour
 
     private float timer = 0f;
     private List<GameObject> activeMonsters = new List<GameObject>();
-
-
+    private HashSet<int> boomIndex = new HashSet<int>();
+    private void Awake()
+    {
+        GameManager._instance.monsterSpawner = this;
+    }
     void Update()
     {
         timer += Time.deltaTime;
@@ -26,7 +29,7 @@ public class MonsterSpawner : MonoBehaviour
             timer = 0f;
         }
 
-
+        HurtBoom();
         // 检查并移除已销毁的怪物
         CheckActiveMonsters();
     }
@@ -62,13 +65,32 @@ public class MonsterSpawner : MonoBehaviour
 
     void CheckActiveMonsters()
     {
-        // 检查 activeMonsters 列表，移除已销毁的怪物
-        for (int i = activeMonsters.Count - 1; i >= 0; i--)
+        activeMonsters.RemoveAll(monster => monster == null);
+    }
+
+    public void Boom(Vector3 p, float boomRange)
+    {
+        for (int i = 0; i < activeMonsters.Count; i ++)
         {
-            if (activeMonsters[i] == null)
+            var monster = activeMonsters[i];
+            if (monster == null)
             {
-                activeMonsters.RemoveAt(i);
+                continue;
+            }
+            float dis = Vector2.Distance(new Vector2(p.x, p.y), new Vector2(monster.transform.position.x, monster.transform.position.y));
+            if(dis < boomRange)
+            {
+                boomIndex.Add(i);
             }
         }
+    }
+
+    public void HurtBoom()
+    {
+        foreach (var item in boomIndex)
+        {
+            activeMonsters[item].GetComponent<MonsterController>().Hurt();
+        }
+        boomIndex.Clear();
     }
 }

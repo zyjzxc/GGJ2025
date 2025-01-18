@@ -933,6 +933,7 @@ MonoBehaviour:
   dangerousTimer: 1
   magma: {fileID: 1664591973}
   roleControl: {fileID: 0}
+  monsterSpawner: {fileID: 0}
   wuDiTime: 0.5
 --- !u!114 &1754240613
 MonoBehaviour:
@@ -951,6 +952,7 @@ MonoBehaviour:
   - {fileID: 2021807906605390911, guid: 33495496ff785f840b3f9f255bea6684, type: 3}
   - {fileID: 488700426618335509, guid: 41a37e4d21732db4c85a1af3cb464c4d, type: 3}
   - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
+  - {fileID: 488700426618335509, guid: 40d3b8443b7871841b44652939496621, type: 3}
   spawnInterval: 0.5
   spawnPoints:
   - {fileID: 2032288106}
@@ -1182,6 +1184,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 774990950974174216, guid: f852ec1018279e9448bf8d8469fc1a50,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 14.154
+      objectReference: {fileID: 0}
+    - target: {fileID: 774990950974174216, guid: f852ec1018279e9448bf8d8469fc1a50,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 774990950974174216, guid: f852ec1018279e9448bf8d8469fc1a50,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -907.38586
+      objectReference: {fileID: 0}
+    - target: {fileID: 774990950974174216, guid: f852ec1018279e9448bf8d8469fc1a50,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 233.49417
+      objectReference: {fileID: 0}
     - target: {fileID: 1041642820100650868, guid: f852ec1018279e9448bf8d8469fc1a50,
         type: 3}
       propertyPath: m_Name
@@ -1191,6 +1213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054154448315794993, guid: f852ec1018279e9448bf8d8469fc1a50,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1073317507007297218, guid: f852ec1018279e9448bf8d8469fc1a50,
         type: 3}
@@ -1331,6 +1358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 182.27618
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944080954162124560, guid: f852ec1018279e9448bf8d8469fc1a50,
+        type: 3}
+      propertyPath: progress
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
