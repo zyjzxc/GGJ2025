@@ -134,12 +134,12 @@ PrefabInstance:
     - target: {fileID: 5142249599171496906, guid: 608ef5e192db7664baf4a5a777e3e04b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.28
+      value: -0.216
       objectReference: {fileID: 0}
     - target: {fileID: 5142249599171496906, guid: 608ef5e192db7664baf4a5a777e3e04b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.37
+      value: -1.413
       objectReference: {fileID: 0}
     - target: {fileID: 5142249599171496906, guid: 608ef5e192db7664baf4a5a777e3e04b,
         type: 3}
@@ -204,16 +204,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4344286086391717312, guid: 5f1f7acf29eceb744892afdaae399b0d,
+    - target: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}
-      propertyPath: m_Size.y
-      value: 0.7011646
-      objectReference: {fileID: 0}
-    - target: {fileID: 4344286086391717312, guid: 5f1f7acf29eceb744892afdaae399b0d,
+      propertyPath: spriteAttack
+      value: 
+      objectReference: {fileID: 21300000, guid: e86315383693a484589a0368f21adfce,
         type: 3}
-      propertyPath: m_Offset.y
-      value: -0.1494177
-      objectReference: {fileID: 0}
+    - target: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
+        type: 3}
+      propertyPath: spriteAttacking
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a993db76f139cd4b925ab4496fe7862,
+        type: 3}
     - target: {fileID: 7127598632236775068, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,7 +266,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6573519856399284639, guid: 5f1f7acf29eceb744892afdaae399b0d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -622,6 +625,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4691338339560803933, guid: 608ef5e192db7664baf4a5a777e3e04b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691338339560803933, guid: 608ef5e192db7664baf4a5a777e3e04b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691338339560803933, guid: 608ef5e192db7664baf4a5a777e3e04b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5142249599171496906, guid: 608ef5e192db7664baf4a5a777e3e04b,
         type: 3}
       propertyPath: m_LocalPosition.x

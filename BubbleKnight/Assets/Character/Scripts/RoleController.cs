@@ -28,6 +28,10 @@ public class RoleControl : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    public Sprite spriteIdle;
+    public Sprite spriteAttack;
+    public Sprite spriteAttacking;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,10 +54,29 @@ public class RoleControl : MonoBehaviour
         Attacking();
         PostAttacking();
 
+        SetAnimation();
+
         targetVelocity = move * maxSpeed;
         body.velocity = targetVelocity;
 
         Bound();
+    }
+
+    private void SetAnimation()
+    {
+        if(roleState == RoleState.Idle)
+        {
+            spriteRenderer.sprite = spriteIdle;
+        } 
+        else if (roleState == RoleState.Attack)
+        {
+
+            spriteRenderer.sprite = spriteAttack;
+        }
+        else if (roleState == RoleState.PostAttack)
+        {
+            spriteRenderer.sprite = spriteAttacking;
+        }
     }
 
     private void Bound()

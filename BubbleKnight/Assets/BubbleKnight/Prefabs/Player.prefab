@@ -446,3 +446,6 @@ MonoBehaviour:
   attackSpeed: 10
   boundMin: {x: -5.6, y: -2.88}
   boundMax: {x: 5.6, y: 2.7}
+  spriteIdle: {fileID: 21300000, guid: 16eb794148a7dbf4d908b2ed211e8d44, type: 3}
+  spriteAttack: {fileID: 21300000, guid: 9a993db76f139cd4b925ab4496fe7862, type: 3}
+  spriteAttacking: {fileID: 21300000, guid: e86315383693a484589a0368f21adfce, type: 3}
