@@ -53,6 +53,10 @@ public class MonsterController : MonoBehaviour
         if(health2 <= 0)
         {
             Die();
+        } else
+        {
+            Color c = GetComponent<SpriteRenderer>().color;
+            GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, c.a / 2);
         }
     }
 
