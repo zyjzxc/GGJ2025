@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class MonsterSpawner : MonoBehaviour
 {
     public GameObject[] monsterPrefabs;
-    public float spawnInterval = 0.5f;
+    public float spawnInterval = 1f;
     public List<Transform> spawnPoints = new List<Transform>();
-    public int maxMonsters = 10;
+    public int maxMonsters = 5;
 
 
     private float timer = 0f;

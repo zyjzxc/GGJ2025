@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     void GameStart()
     {
         state = GameState.Running;
-        upSpeed = 5;
+        upSpeed = 10;
     }
 
     void GameEnd()
