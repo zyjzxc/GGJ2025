@@ -50,14 +50,15 @@ public class GameManager : MonoBehaviour
     void GameReset()
     {
         nowHeight = 0;
-        upSpeed = 5;
         state = GameState.Prepare;
         health = 3;
+        GameStart();
     }
 
     void GameStart()
     {
         state = GameState.Running;
+        upSpeed = 5;
     }
 
     void GameEnd()
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
         slowTimer += deltaTime;
         if (slowTimer > slowSpeedGapTime)
         {
-            upSpeed--;
+            upSpeed = Mathf.Max(upSpeed - 1, 0);
             slowTimer = 0;
         }
 
