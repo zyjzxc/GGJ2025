@@ -32,8 +32,9 @@ public class GameManager : MonoBehaviour
     public int nowLvl = 0;
 
     // 500, 1000, 1500, 2500, 4000, 6000, 1000
+    const int MAX_LVL = 6;
     public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000 };
-    public float [] dangerousSpeeds = { 10, 20, 30, 60, 100, 150, 200 };
+    public float [] dangerousSpeeds = { 20, 20, 30, 60, 80, 120, 150 };
 
     public float dangerousTimer = 1f;
     public bool isDangerous = false;
@@ -103,7 +104,7 @@ public class GameManager : MonoBehaviour
 
         nowHeight += (deltaTime * upSpeed);
         if (nowHeight > levelHeight[nowLvl]) {
-            nowLvl++;
+            nowLvl = Mathf.Min(MAX_LVL, nowLvl + 1);
             dangerousTimer = 1f;
         }
 
