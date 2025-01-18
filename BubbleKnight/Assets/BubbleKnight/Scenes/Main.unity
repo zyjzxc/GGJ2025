@@ -949,8 +949,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefabs:
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
-  - {fileID: 2021807906605390911, guid: 33495496ff785f840b3f9f255bea6684, type: 3}
-  - {fileID: 488700426618335509, guid: 41a37e4d21732db4c85a1af3cb464c4d, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
+  - {fileID: 7932485592409327062, guid: 992a63d9293b5d7468fa50b09c22d786, type: 3}
   - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
   - {fileID: 488700426618335509, guid: 40d3b8443b7871841b44652939496621, type: 3}
   spawnInterval: 0.5
@@ -959,8 +959,7 @@ MonoBehaviour:
   - {fileID: 1388149564}
   - {fileID: 1345644831}
   - {fileID: 35558397}
-  maxMonsters: 5
-  activeMonsters: []
+  maxMonsters: 10
 --- !u!114 &1754240614
 MonoBehaviour:
   m_ObjectHideFlags: 0
