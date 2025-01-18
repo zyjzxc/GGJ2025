@@ -70,6 +70,7 @@ public class RoleControl : MonoBehaviour
         Move();
         Attack();
         Attacking();
+        OutScreenY();
         PostAttacking();
 
         SetAnimation();
@@ -168,15 +169,25 @@ public class RoleControl : MonoBehaviour
             return;
         }
 
-        if (transform.position.y > minY) // 下落
-        {
-            // TODO检测怪物
-        }
-        else // 完成下落
+        //if (transform.position.y > minY) // 下落
+        //{
+        //    // TODO检测怪物
+        //}
+        //else // 完成下落
+        //{
+        //    GameManager._instance.SlowDown();
+        //    StopAttack(true);
+        //}
+    }
+
+    private void OutScreenY()
+    {
+        if(transform.position.y < minY)
         {
             GameManager._instance.SlowDown();
             StopAttack(true);
         }
+
     }
 
     public void StopAttack(bool isMiss)
