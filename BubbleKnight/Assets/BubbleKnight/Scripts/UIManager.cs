@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject speedUI;
     public GameObject targetUI;
 
+    public GameObject progress;
     private void Awake()
     {
         if (instance == null)
@@ -55,5 +56,7 @@ public class UIManager : MonoBehaviour
     public void SetTarget(float now, float target)
     {
         targetUI.GetComponent<TextMeshProUGUI>().text = (int)now + " m" + " / " + (int)target + " m";
+        progress.GetComponent<UIProgress>().SetProcess(now/target);
     }
+
 }
