@@ -154,6 +154,8 @@ public class GameManager : MonoBehaviour
 
     public void killRole()
     {
+        health = 0;
+        UIManager.instance.SetHealth(health);
         roleControl.Dead();
         state = GameState.Lose;
         GameEnd();
