@@ -27,14 +27,14 @@ public class GameManager : MonoBehaviour
     public float upSpeed = 0;
     public int health = MAX_HEART;
 
-    const float slowSpeedGapTime = 0.5f;
+    const float slowSpeedGapTime = 0.3f;
     float slowTimer = 0;
     public int nowLvl = 0;
 
     // 500, 1000, 1500, 2500, 4000, 6000, 1000
-    const int MAX_LVL = 6;
-    public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000 };
-    public float [] dangerousSpeeds = { 20, 20, 30, 60, 80, 120, 150 };
+    const int MAX_LVL = 8;
+    public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000, 15000, 25000};
+    public float [] dangerousSpeeds = { 5, 15, 30, 60, 80, 120, 170, 230, 300};
 
     public int continueHitTime = 0;
 
