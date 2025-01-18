@@ -29,7 +29,7 @@ public class Magma : MonsterController
 
         float y = Mathf.Min(MAX_HEIGHT, gameObject.transform.position.y + magmaSpeed * deltaTime);
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, y, gameObject.transform.position.z);
-        if (gameObject.transform.position.y < MIN_HEIGHT)
+        if (gameObject.transform.position.y < MIN_HEIGHT - 0.5f)
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, MIN_HEIGHT, gameObject.transform.position.z); ;
             gameObject.SetActive(false);
