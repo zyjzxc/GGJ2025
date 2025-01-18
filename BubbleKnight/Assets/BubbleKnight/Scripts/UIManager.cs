@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public List<GameObject> healthUI;
 
     public GameObject speedUI;
+    public GameObject speedProgress;
     public GameObject targetUI;
 
     public GameObject progress;
@@ -50,7 +51,11 @@ public class UIManager : MonoBehaviour
 
     public void SetSpeed(float speed)
     {
-        speedUI.GetComponent<TextMeshProUGUI>().text = "Speed: " + (int)speed + " m/s";
+        speedUI.GetComponent<TextMeshProUGUI>().text = (int)speed + " m/s";
+
+        float progress = speed / 1000;
+        progress = Mathf.Clamp01(progress);
+        speedUI.GetComponent<Scrollbar>().size = progress;
     }
 
     public void SetTarget(float now, float target)

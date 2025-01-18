@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuiBuiBui : NormalMonster
 {
-    private const float buiTime = 3;
+    public float buiTime = 3;
     private float buiTimeAdd = 0;
     public GameObject buiPrefab;
 
