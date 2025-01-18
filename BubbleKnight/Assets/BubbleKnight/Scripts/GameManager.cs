@@ -28,20 +28,20 @@ public class GameManager : MonoBehaviour
     public float upSpeed = 0;
     public int health = MAX_HEART;
 
-    const float slowSpeedGapTime = 0.3f;
     float slowTimer = 0;
     public int nowLvl = 0;
 
     // 500, 1000, 1500, 2500, 4000, 6000, 1000
-    const int MAX_LVL = 6;
+    const int MAX_LVL = 7;
     public GameObject[] monsterPrefabs0;
     public GameObject[] monsterPrefabs1;
     public GameObject[] monsterPrefabs2;
     public GameObject[] monsterPrefabs3;
     public GameObject[] monsterPrefabs4;
-    public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000};
-    public float [] dangerousSpeeds = { 5, 15, 30, 60, 80, 120, 170};
-    public int[] maxMonsterNum = { 5, 6, 6, 8, 8, 8, 8 };
+    public float[] levelHeight = { 200, 500, 1000, 1500, 2500, 4000, 6000, 10000};
+    public float [] dangerousSpeeds = {2, 5, 15, 30, 60, 80, 120, 170};
+    public int[] maxMonsterNum = { 5, 5, 6, 6, 8, 8, 8, 8 };
+    public float[] slowSpeedGapTimes = { 0.3f, 0.3f, 0.25f, 0.25f, 0.2f, 0.2f, 0.15f, 0.1f };
 
     public int GetMaxMonsterNum()
     {
@@ -143,13 +143,14 @@ public class GameManager : MonoBehaviour
 
         // slow speed
         slowTimer += deltaTime;
-        if (slowTimer > slowSpeedGapTime)
+        if (slowTimer > slowSpeedGapTimes[nowLvl])
         {
             upSpeed = Mathf.Max(upSpeed - 1, 0);
             slowTimer = 0;
         }
 
         nowHeight += (deltaTime * upSpeed);
+        nowLvl = Mathf.Min(MAX_LVL, nowLvl);
         if (nowHeight > levelHeight[nowLvl]) {
             nowLvl = Mathf.Min(MAX_LVL, nowLvl + 1);
             dangerousTimer = 1f;

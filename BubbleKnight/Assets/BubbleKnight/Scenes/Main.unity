@@ -1004,12 +1004,13 @@ MonoBehaviour:
   monsterPrefabs1:
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
-  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
   - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
   monsterPrefabs2:
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
   - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
   - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
   monsterPrefabs3:
@@ -1017,6 +1018,7 @@ MonoBehaviour:
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
   - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
   - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
+  - {fileID: 7932485592409327062, guid: 992a63d9293b5d7468fa50b09c22d786, type: 3}
   - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
   monsterPrefabs4:
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
