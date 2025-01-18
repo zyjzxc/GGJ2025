@@ -206,15 +206,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}
+      propertyPath: spriteIdle
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a993db76f139cd4b925ab4496fe7862,
+        type: 3}
+    - target: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
+        type: 3}
       propertyPath: spriteAttack
       value: 
-      objectReference: {fileID: 21300000, guid: e86315383693a484589a0368f21adfce,
+      objectReference: {fileID: 21300000, guid: 16eb794148a7dbf4d908b2ed211e8d44,
         type: 3}
     - target: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}
       propertyPath: spriteAttacking
       value: 
-      objectReference: {fileID: 21300000, guid: 9a993db76f139cd4b925ab4496fe7862,
+      objectReference: {fileID: 21300000, guid: e86315383693a484589a0368f21adfce,
         type: 3}
     - target: {fileID: 7127598632236775068, guid: 5f1f7acf29eceb744892afdaae399b0d,
         type: 3}

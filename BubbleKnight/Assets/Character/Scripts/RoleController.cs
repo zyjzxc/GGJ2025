@@ -32,6 +32,10 @@ public class RoleControl : MonoBehaviour
     public Sprite spriteAttack;
     public Sprite spriteAttacking;
 
+    private float attackTime = 0.5;
+    private float attackTimeAdd = 0;
+    private bool attackEffect = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +79,22 @@ public class RoleControl : MonoBehaviour
         }
         else if (roleState == RoleState.PostAttack)
         {
-            spriteRenderer.sprite = spriteAttacking;
+            if (attackEffect) // 需要播放攻击动画
+            {
+                spriteRenderer.sprite = spriteAttacking;
+                attackEffect = false;
+            } else
+            {
+                if(attackTimeAdd > attackTime)
+                {
+                    attackTimeAdd = 0;
+                    spriteRenderer.sprite = spriteIdle;
+                } else
+                {
+                    attackTimeAdd += Time.deltaTime;
+                    Debug.Log("播放攻击动画" + attackTimeAdd);
+                }
+            }
         }
     }
 
@@ -146,6 +165,7 @@ public class RoleControl : MonoBehaviour
     {
         roleState = RoleState.PostAttack;
         move.y = attackSpeed;
+        attackEffect = true;
     }
 
     private void PostAttacking()
