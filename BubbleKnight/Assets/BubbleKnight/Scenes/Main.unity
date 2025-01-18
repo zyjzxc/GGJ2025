@@ -681,6 +681,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magma
       objectReference: {fileID: 0}
+    - target: {fileID: 448456587921947948, guid: c79ba51b3e0757347ba7edc6b4854882,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904195103688196776, guid: c79ba51b3e0757347ba7edc6b4854882,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 17.995657
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904195103688196776, guid: c79ba51b3e0757347ba7edc6b4854882,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.79217243
+      objectReference: {fileID: 0}
     - target: {fileID: 5904195103688196776, guid: c79ba51b3e0757347ba7edc6b4854882,
         type: 3}
       propertyPath: m_IsTrigger
@@ -699,7 +714,7 @@ PrefabInstance:
     - target: {fileID: 5996739763278127261, guid: c79ba51b3e0757347ba7edc6b4854882,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.94
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 5996739763278127261, guid: c79ba51b3e0757347ba7edc6b4854882,
         type: 3}
@@ -916,7 +931,6 @@ MonoBehaviour:
   - 150
   - 200
   dangerousTimer: 1
-  isDangerous: 0
   magma: {fileID: 1664591973}
   roleControl: {fileID: 0}
   wuDiTime: 0.5

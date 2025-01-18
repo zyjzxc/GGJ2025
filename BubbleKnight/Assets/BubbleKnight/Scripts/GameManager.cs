@@ -36,8 +36,12 @@ public class GameManager : MonoBehaviour
     public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000 };
     public float [] dangerousSpeeds = { 20, 20, 30, 60, 80, 120, 150 };
 
+    public bool GetDangerous()
+    {
+        return upSpeed < dangerousSpeeds[nowLvl];
+    }
+
     public float dangerousTimer = 1f;
-    public bool isDangerous = false;
 
     public GameObject magma;
 
@@ -108,7 +112,8 @@ public class GameManager : MonoBehaviour
             dangerousTimer = 1f;
         }
 
-        if (upSpeed < dangerousSpeeds[nowLvl])
+
+        if (!magma.gameObject.activeSelf && GetDangerous())
         {
             dangerousTimer -= deltaTime;
         }
@@ -118,14 +123,7 @@ public class GameManager : MonoBehaviour
         }
         if (dangerousTimer < 0)
         {
-            isDangerous = true;
-            magma.SetActive(isDangerous);
-        }
-        else
-        {
-            isDangerous = false;
-            magma.SetActive(isDangerous);
-
+            magma.SetActive(true);
         }
 
         if (nowHeight >= MAX_HEIGHT)
