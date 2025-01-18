@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
 
     public void SetSpeed(float speed)
     {
-        speedUI.GetComponent<TextMeshProUGUI>().text = "Speed: " + speed.ToString("0.0") + " m/s";
+        speedUI.GetComponent<TextMeshProUGUI>().text = "Speed: " + (int)speed + " m/s";
     }
 
     public void SetTarget(float now, float target)
