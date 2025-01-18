@@ -13,7 +13,7 @@ public enum MonsterState
 public class MonsterController : MonoBehaviour
 {
     public MonsterState monsterState;
-    public int id;
+    public int point = 3;
 
     public void InitMonster(Vector3 pos)
     {
@@ -36,5 +36,16 @@ public class MonsterController : MonoBehaviour
     {
         // Æô¶¯Ð­³ÌA->B
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Die();
+    }
+
+    void Die()
+    {
+        GameManager._instance.AddSpeed(point);
+        Destroy(gameObject, 0.1f);
     }
 }

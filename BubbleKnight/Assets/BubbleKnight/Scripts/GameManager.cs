@@ -93,12 +93,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void AddSpeed(int sp)
+    public void AddSpeed(int sp)
     {
         upSpeed += sp;
     }
 
-    void TakeDamage()
+    public void TakeDamage()
     {
         health--;
         if (health < 0)
