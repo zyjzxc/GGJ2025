@@ -914,6 +914,34 @@ MonoBehaviour:
   upSpeed: 0
   health: 3
   nowLvl: 0
+  monsterPrefabs0:
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  monsterPrefabs1:
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
+  monsterPrefabs2:
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
+  - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
+  monsterPrefabs3:
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
+  - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
+  monsterPrefabs4:
+  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
+  - {fileID: 7932485592409327062, guid: 992a63d9293b5d7468fa50b09c22d786, type: 3}
+  - {fileID: 7932485592409327062, guid: 992a63d9293b5d7468fa50b09c22d786, type: 3}
+  - {fileID: 488700426618335509, guid: 40d3b8443b7871841b44652939496621, type: 3}
+  - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
   levelHeight:
   - 500
   - 1000
@@ -930,6 +958,7 @@ MonoBehaviour:
   - 100
   - 150
   - 200
+  maxMonsterNum: 05000000060000000600000008000000080000000800000008000000
   continueHitTime: 0
   dangerousTimer: 1
   magma: {fileID: 1664591973}
