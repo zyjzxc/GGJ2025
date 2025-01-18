@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.567, y: -1.05, z: 1}
-  m_LocalScale: {x: 0.7, y: 0.37857, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.41138577, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -243,7 +243,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.9092076}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -254,7 +254,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.67, y: 19.58}
+  m_Size: {x: 19.67, y: 17.761587}
   m_EdgeRadius: 0
 --- !u!114 &-3055591623518193453
 MonoBehaviour:
@@ -270,3 +270,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterState: 0
   point: 3
+  magmaSpeed: 0

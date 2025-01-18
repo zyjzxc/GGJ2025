@@ -684,17 +684,17 @@ PrefabInstance:
     - target: {fileID: 448456587921947948, guid: c79ba51b3e0757347ba7edc6b4854882,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5904195103688196776, guid: c79ba51b3e0757347ba7edc6b4854882,
         type: 3}
       propertyPath: m_Size.y
-      value: 17.995657
+      value: 17.761587
       objectReference: {fileID: 0}
     - target: {fileID: 5904195103688196776, guid: c79ba51b3e0757347ba7edc6b4854882,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.79217243
+      value: -0.9092076
       objectReference: {fileID: 0}
     - target: {fileID: 5904195103688196776, guid: c79ba51b3e0757347ba7edc6b4854882,
         type: 3}
