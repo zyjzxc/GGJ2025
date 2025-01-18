@@ -54,6 +54,6 @@ public class UIManager : MonoBehaviour
 
     public void SetTarget(float now, float target)
     {
-        targetUI.GetComponent<TextMeshProUGUI>().text = now + " m" + " / " + target + " m";
+        targetUI.GetComponent<TextMeshProUGUI>().text = (int)now + " m" + " / " + (int)target + " m";
     }
 }
