@@ -22,7 +22,7 @@ public struct GameData
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
-    const int MAX_HEART = 3;
+    public const int MAX_HEART = 8;
     public const float MAX_HEIGHT = 10000;
     public float nowHeight = 0;
     public float upSpeed = 0;

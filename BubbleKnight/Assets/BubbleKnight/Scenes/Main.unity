@@ -996,7 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowHeight: 0
   upSpeed: 0
-  health: 3
+  health: 8
   nowLvl: 0
   monsterPrefabs0:
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}

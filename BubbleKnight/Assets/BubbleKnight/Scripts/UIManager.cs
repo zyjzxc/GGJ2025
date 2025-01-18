@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     {
         health = transform.Find("health").gameObject;
         healthUI.Clear();
-        for (int i = 0; i < GameManager._instance.health; i ++)
+        for (int i = 0; i < GameManager.MAX_HEART; i ++)
         {
             GameObject love = Instantiate(healthPrefab, Vector3.zero, Quaternion.identity);
             love.transform.SetParent(health.transform);
