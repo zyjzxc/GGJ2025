@@ -44,7 +44,7 @@ public class MonsterController : MonoBehaviour
             Hurt();
     }
 
-    public void Hurt()
+    public virtual void Hurt()
     {
         if (monsterState == MonsterState.Dead) return;
 

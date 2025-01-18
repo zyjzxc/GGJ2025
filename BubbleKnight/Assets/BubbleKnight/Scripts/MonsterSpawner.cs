@@ -19,7 +19,7 @@ public class MonsterSpawner : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
+        spawnInterval = GameManager._instance.GetSpawnInterval();
         monsterPrefabs = GameManager._instance.GetMonsterPrefabs();
         maxMonsters = GameManager._instance.GetMaxMonsterNum();
         // 当计时器超过生成间隔且同时存在的怪物数未达到上限时
