@@ -21,9 +21,9 @@ public struct GameData
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance; 
-    public const int MAX_HEIGHT = 10000;
-    public int nowHeight = 0;
-    public int upSpeed = 0;
+    public const float MAX_HEIGHT = 10000;
+    public float nowHeight = 0;
+    public float upSpeed = 0;
     public int health = 3;
 
     const float slowSpeedGapTime = 0.5f;
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         }
 
         //int dangrousSpeed = nowHeight / 10;
-        nowHeight += (int)(deltaTime * upSpeed);
+        nowHeight += (deltaTime * upSpeed);
         //if (state == GameState.Running)
         {
             if (nowHeight >= MAX_HEIGHT)
