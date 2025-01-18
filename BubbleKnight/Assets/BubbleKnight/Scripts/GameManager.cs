@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
     public void TakeDamage()
     {
         health--;
+        UIManager.instance.SetHealth(health);
         Debug.Log("ПлбЊ" + health);
         if (health < 0)
         {
