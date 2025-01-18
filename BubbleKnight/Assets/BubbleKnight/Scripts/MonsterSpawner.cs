@@ -89,7 +89,8 @@ public class MonsterSpawner : MonoBehaviour
     {
         foreach (var item in boomIndex)
         {
-            activeMonsters[item].GetComponent<MonsterController>().Hurt();
+            if(activeMonsters[item] != null)
+                activeMonsters[item].GetComponent<MonsterController>().Hurt();
         }
         boomIndex.Clear();
     }
