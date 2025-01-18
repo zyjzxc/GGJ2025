@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+
+    public GameObject healthPrefab;
+    private GameObject health;
     public List<GameObject> healthUI;
 
     public GameObject speedUI;
@@ -25,7 +28,17 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = transform.Find("health").gameObject;
+        healthUI.Clear();
+        for (int i = 0; i < GameManager._instance.health; i ++)
+        {
+            GameObject love = Instantiate(healthPrefab, Vector3.zero, Quaternion.identity);
+            love.transform.SetParent(health.transform);
+            love.GetComponent<RectTransform>().localPosition = new Vector3(200 + i * 150, -172, 0); 
+            healthUI.Add(love);
+        }
         
+
     }
 
     // Update is called once per frame

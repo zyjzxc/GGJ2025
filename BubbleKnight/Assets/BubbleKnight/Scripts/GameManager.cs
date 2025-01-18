@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     {
         continueHitTime = 0;
         nowHeight = 0;
-        health = 3;
+        health = MAX_HEART;
         nowLvl = 0;
         state = GameState.Running;
         upSpeed = 10;
