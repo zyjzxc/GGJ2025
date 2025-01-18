@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         if (state != GameState.Running) return;
 
         UIManager.instance.SetSpeed(upSpeed);
-        //UIManager.instance.SetTarget(nowHeight, MAX_HEIGHT);
+        UIManager.instance.SetTarget(nowHeight, MAX_HEIGHT);
 
         float deltaTime = Time.deltaTime;
 
