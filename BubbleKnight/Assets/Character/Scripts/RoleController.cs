@@ -32,6 +32,7 @@ public class RoleControl : MonoBehaviour
     public Sprite spriteAttack;
     public Sprite spriteAttack2;
     public Sprite spriteAttacking;
+    public Sprite spriteDeath;
 
     private float attackTime = 4f;
     private float attackTimeAdd = 0;
@@ -78,7 +79,13 @@ public class RoleControl : MonoBehaviour
 
     private void SetAnimation()
     {
-        if(roleState == RoleState.Idle)
+        if (roleState == RoleState.Dead)
+        {
+            spriteRenderer.sprite = spriteDeath;
+            return;
+        }
+
+        if (roleState == RoleState.Idle)
         {
             spriteRenderer.sprite = spriteIdle;
         } 
@@ -169,15 +176,15 @@ public class RoleControl : MonoBehaviour
         else // ÕÍ≥…œ¬¬‰
         {
             GameManager._instance.SlowDown();
-            StopAttack();
+            StopAttack(true);
         }
     }
 
-    public void StopAttack()
+    public void StopAttack(bool isMiss)
     {
         weapon.SetActive(false);
         roleState = RoleState.PostAttack;
-        move.y = attackSpeed;
+        move.y = isMiss ? attackSpeed*0.5f : attackSpeed;
         attackEffect = true;
     }
 

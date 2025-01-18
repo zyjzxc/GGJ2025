@@ -20,6 +20,6 @@ public class Weapon : MonoBehaviour
     {
         Debug.Log("ล๖นึ" + collision.name);
 
-        GameManager._instance.roleControl.StopAttack();
+        GameManager._instance.roleControl.StopAttack(false);
     }
 }
