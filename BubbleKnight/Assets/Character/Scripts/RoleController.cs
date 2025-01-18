@@ -38,9 +38,12 @@ public class RoleControl : MonoBehaviour
 
     public bool isWuDi = false;
 
+    public GameObject weapon;
+
     // Start is called before the first frame update
     void Start()
     {
+        weapon.SetActive(false);
         GameManager._instance.roleControl = this;
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -64,6 +67,8 @@ public class RoleControl : MonoBehaviour
 
         targetVelocity = move * maxSpeed;
         body.velocity = targetVelocity;
+        body.velocity += Physics2D.gravity * 0.1f;
+
 
         Bound();
     }
@@ -140,6 +145,7 @@ public class RoleControl : MonoBehaviour
             move.y = -attackSpeed;
             roleState = RoleState.Attack;
             Debug.Log("¹¥»÷");
+            weapon.SetActive(true);
         }
     }
 
@@ -163,6 +169,7 @@ public class RoleControl : MonoBehaviour
 
     public void StopAttack()
     {
+        weapon.SetActive(false);
         roleState = RoleState.PostAttack;
         move.y = attackSpeed;
         attackEffect = true;

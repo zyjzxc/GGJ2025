@@ -100,6 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6046171463788330079}
   - component: {fileID: 2776986209421244646}
+  - component: {fileID: 9069802386554967893}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -167,6 +168,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9870329, y: 1.324183}
   m_EdgeRadius: 0
+--- !u!114 &9069802386554967893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531417205472288116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7404681350b5eab489760b15220176c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3394957484032335318
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,3 +416,5 @@ MonoBehaviour:
   spriteIdle: {fileID: 21300000, guid: 9a993db76f139cd4b925ab4496fe7862, type: 3}
   spriteAttack: {fileID: 21300000, guid: 16eb794148a7dbf4d908b2ed211e8d44, type: 3}
   spriteAttacking: {fileID: 21300000, guid: e86315383693a484589a0368f21adfce, type: 3}
+  isWuDi: 0
+  weapon: {fileID: 2254155797438631795}

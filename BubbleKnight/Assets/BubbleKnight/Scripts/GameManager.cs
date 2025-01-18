@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     void GameEnd()
     {
-
+        Debug.Log("ÓÎÏ·½áÊø");
     }
 
     // Update is called once per frame
