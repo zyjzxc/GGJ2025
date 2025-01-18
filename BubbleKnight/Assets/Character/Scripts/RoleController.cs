@@ -61,7 +61,12 @@ public class RoleControl : MonoBehaviour
     void Update()
     {
         if (roleState == RoleState.Dead)
+        {
+            spriteRenderer.sprite = spriteDeath;
+            move = new Vector2(0, 0);
+            body.velocity = move;
             return;
+        }
         Move();
         Attack();
         Attacking();
@@ -79,12 +84,6 @@ public class RoleControl : MonoBehaviour
 
     private void SetAnimation()
     {
-        if (roleState == RoleState.Dead)
-        {
-            spriteRenderer.sprite = spriteDeath;
-            return;
-        }
-
         if (roleState == RoleState.Idle)
         {
             spriteRenderer.sprite = spriteIdle;
