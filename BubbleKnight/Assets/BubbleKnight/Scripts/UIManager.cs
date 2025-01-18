@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
 
         float progress = speed / 1000;
         progress = Mathf.Clamp01(progress);
-        speedUI.GetComponent<Scrollbar>().size = progress;
+        speedProgress.GetComponent<Scrollbar>().size = progress;
     }
 
     public void SetTarget(float now, float target)
