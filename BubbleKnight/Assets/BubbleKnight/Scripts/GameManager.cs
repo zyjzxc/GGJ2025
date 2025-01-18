@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour
     public void TakeDamage()
     {
         health--;
+        Debug.Log("ПлбЊ" + health);
         if (health < 0)
         {
             state = GameState.Lose;

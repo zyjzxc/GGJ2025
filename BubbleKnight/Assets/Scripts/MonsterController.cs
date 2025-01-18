@@ -40,7 +40,8 @@ public class MonsterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Die();
+        if(GameManager._instance.roleControl.IsCauseDamage())
+            Die();
     }
 
     void Die()

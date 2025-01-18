@@ -36,6 +36,8 @@ public class RoleControl : MonoBehaviour
     private float attackTimeAdd = 0;
     private bool attackEffect = false;
 
+    public bool isWuDi = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,7 +94,6 @@ public class RoleControl : MonoBehaviour
                 } else
                 {
                     attackTimeAdd += Time.deltaTime;
-                    Debug.Log("播放攻击动画" + attackTimeAdd);
                 }
             }
         }
@@ -152,11 +153,9 @@ public class RoleControl : MonoBehaviour
         if (transform.position.y > minY) // 下落
         {
             // TODO检测怪物
-            Debug.Log("下落中");
         }
         else // 完成下落
         {
-            Debug.Log("完成下落");
             StopAttack();
         }
     }
@@ -203,6 +202,15 @@ public class RoleControl : MonoBehaviour
             return true;
         }
 
+        return false;
+    }
+
+    public bool IsCauseDamage()
+    {
+        if(roleState == RoleState.Attack)
+        {
+            return true ;
+        }
         return false;
     }
 }
