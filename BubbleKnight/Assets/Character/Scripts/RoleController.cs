@@ -30,9 +30,10 @@ public class RoleControl : MonoBehaviour
 
     public Sprite spriteIdle;
     public Sprite spriteAttack;
+    public Sprite spriteAttack2;
     public Sprite spriteAttacking;
 
-    private float attackTime = 0.5f;
+    private float attackTime = 4f;
     private float attackTimeAdd = 0;
     private bool attackEffect = false;
 
@@ -96,6 +97,9 @@ public class RoleControl : MonoBehaviour
                 {
                     attackTimeAdd = 0;
                     spriteRenderer.sprite = spriteIdle;
+                } else if (attackTimeAdd > attackTime/1.5)
+                {
+                    spriteRenderer.sprite = spriteAttack2;
                 } else
                 {
                     attackTimeAdd += Time.deltaTime;
