@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
     {
         speedUI.GetComponent<TextMeshProUGUI>().text = (int)speed + " m/s";
 
-        float progress = speed / 1000;
+        float progress = speed / 200;
         progress = Mathf.Clamp01(progress);
         speedProgress.GetComponent<Scrollbar>().size = progress;
     }
