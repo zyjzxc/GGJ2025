@@ -32,7 +32,7 @@ public class RoleControl : MonoBehaviour
     public Sprite spriteAttack;
     public Sprite spriteAttacking;
 
-    private float attackTime = 0.5;
+    private float attackTime = 0.5f;
     private float attackTimeAdd = 0;
     private bool attackEffect = false;
 
