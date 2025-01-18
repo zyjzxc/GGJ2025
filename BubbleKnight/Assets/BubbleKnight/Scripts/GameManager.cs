@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
         state = GameState.Running;
     }
 
+    void GameEnd()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -57,6 +62,7 @@ public class GameManager : MonoBehaviour
             if (nowHeight >= MAX_HEIGHT)
             {
                 state = GameState.Win;
+                GameEnd();
             }
         }
     }
@@ -67,6 +73,7 @@ public class GameManager : MonoBehaviour
         if (health < 0)
         {
             state = GameState.Lose;
+            GameEnd();
         }
     }
 }
