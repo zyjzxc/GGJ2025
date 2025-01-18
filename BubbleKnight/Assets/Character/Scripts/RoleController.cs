@@ -39,6 +39,7 @@ public class RoleControl : MonoBehaviour
     private bool attackEffect = false;
 
     public bool isWuDi = false;
+    private float wuDiTime = 0;
 
     public GameObject weapon;
 
@@ -67,6 +68,7 @@ public class RoleControl : MonoBehaviour
             body.velocity = move;
             return;
         }
+        WuDi();
         Move();
         Attack();
         Attacking();
@@ -81,6 +83,26 @@ public class RoleControl : MonoBehaviour
 
 
         Bound();
+    }
+
+    private void WuDi()
+    {
+        if(wuDiTime > 0)
+        {
+            wuDiTime -= Time.deltaTime;
+            spriteRenderer.color = Color.yellow;
+            isWuDi = true;
+        } else
+        {
+            isWuDi = false;
+            wuDiTime = 0;
+            spriteRenderer.color = Color.white;
+        }
+    }
+
+    public void AddWuDiTime(float time)
+    {
+        wuDiTime += time;
     }
 
     private void SetAnimation()

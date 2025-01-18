@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
 
     public RoleControl roleControl;
+    public float wuDiTime = 0.5f;
 
     GameState state = GameState.Prepare;
     // Start is called before the first frame update
@@ -119,6 +120,8 @@ public class GameManager : MonoBehaviour
 
     public void TakeDamage()
     {
+        if (roleControl.isWuDi == true)
+            return;
         health--;
         UIManager.instance.SetHealth(health);
         Debug.Log("ПлбЊ" + health);
@@ -127,6 +130,9 @@ public class GameManager : MonoBehaviour
             roleControl.Dead();
             state = GameState.Lose;
             GameEnd();
+        } else
+        {
+            roleControl.AddWuDiTime(wuDiTime);
         }
     }
 }
