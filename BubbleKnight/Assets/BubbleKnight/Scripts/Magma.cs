@@ -38,6 +38,7 @@ public class Magma : MonsterController
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager._instance.killRole();
+        if (collision.gameObject.GetComponent<Body>())
+            GameManager._instance.killRole();
     }
 }
