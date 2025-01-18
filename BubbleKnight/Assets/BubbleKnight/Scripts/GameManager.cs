@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         health--;
         UIManager.instance.SetHealth(health);
         Debug.Log("ПлбЊ" + health);
-        if (health < 0)
+        if (health == 0)
         {
             roleControl.Dead();
             state = GameState.Lose;

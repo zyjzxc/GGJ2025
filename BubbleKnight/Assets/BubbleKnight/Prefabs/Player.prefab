@@ -155,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.071320534, y: 0.1620915}
+  m_Offset: {x: -0.1327765, y: 0.16550577}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -166,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9870329, y: 1.324183}
+  m_Size: {x: 0.65926695, y: 1.0578735}
   m_EdgeRadius: 0
 --- !u!114 &9069802386554967893
 MonoBehaviour:
@@ -415,6 +415,7 @@ MonoBehaviour:
   boundMax: {x: 5.6, y: 2.7}
   spriteIdle: {fileID: 21300000, guid: 9a993db76f139cd4b925ab4496fe7862, type: 3}
   spriteAttack: {fileID: 21300000, guid: 16eb794148a7dbf4d908b2ed211e8d44, type: 3}
+  spriteAttack2: {fileID: 0}
   spriteAttacking: {fileID: 21300000, guid: e86315383693a484589a0368f21adfce, type: 3}
   isWuDi: 0
   weapon: {fileID: 2254155797438631795}
