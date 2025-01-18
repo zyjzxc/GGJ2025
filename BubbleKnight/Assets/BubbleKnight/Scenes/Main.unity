@@ -1028,15 +1028,6 @@ MonoBehaviour:
   - {fileID: 7932485592409327062, guid: 992a63d9293b5d7468fa50b09c22d786, type: 3}
   - {fileID: 488700426618335509, guid: 40d3b8443b7871841b44652939496621, type: 3}
   - {fileID: 2981076253712547434, guid: 1b0181c62320cbc4b8fba804587c29ed, type: 3}
-  slowSpeedGapTimes:
-  - 0.3
-  - 0.3
-  - 0.25
-  - 0.25
-  - 0.2
-  - 0.2
-  - 0.15
-  - 0.1
   continueHitTime: 0
   dangerousTimer: 1
   magma: {fileID: 1664591973}
@@ -1296,6 +1287,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1390735467121717843, guid: f852ec1018279e9448bf8d8469fc1a50,
+        type: 3}
+      propertyPath: tipsPrefab
+      value: 
+      objectReference: {fileID: 3479229250854718144, guid: a9b7a17a92dc63b42b8b2234af8fd60c,
+        type: 3}
     - target: {fileID: 3855723194591770121, guid: f852ec1018279e9448bf8d8469fc1a50,
         type: 3}
       propertyPath: m_Pivot.x

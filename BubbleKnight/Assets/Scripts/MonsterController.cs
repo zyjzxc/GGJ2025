@@ -41,7 +41,9 @@ public class MonsterController : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (GameManager._instance.roleControl.IsCauseDamage())
+        {
             Hurt();
+        }
     }
 
     public virtual void Hurt()
@@ -50,7 +52,8 @@ public class MonsterController : MonoBehaviour
 
         health2--;
 
-        if(health2 <= 0)
+        UIManager.instance.TipsText((GameManager._instance.continueHitTime + 1) + " Hit", transform.position);
+        if (health2 <= 0)
         {
             Die();
         } else

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +10,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     public GameObject healthPrefab;
+    public GameObject tipsPrefab;
     public Gradient healthGradient;
     
     private GameObject health;
@@ -82,6 +84,24 @@ public class UIManager : MonoBehaviour
         p = Mathf.Clamp01(p);
         p = Mathf.Pow(p, 0.4f);
         progress.GetComponent<UIProgress>().SetProcess(p);
+    }
+
+    public void TipsText(string str, Vector3 pointWS)
+    {
+        // 将世界坐标转换为屏幕坐标
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(pointWS);
+        // 实例化 UI 元素
+        GameObject uiInstance = Instantiate(tipsPrefab, this.transform);
+        uiInstance.GetComponent<TextMeshProUGUI>().text = str;
+        uiInstance.transform.SetParent(this.transform);
+        // 设置 UI 元素的位置
+        RectTransform rectTransform = uiInstance.GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            uiInstance.transform.position = screenPosition;
+        }
+        //uiInstance..DOMove(new Vector3(0,1,0), 0.5f);
+        Destroy(uiInstance, 0.5f);
     }
 
 }
