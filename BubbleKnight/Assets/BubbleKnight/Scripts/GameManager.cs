@@ -29,6 +29,16 @@ public class GameManager : MonoBehaviour
 
     const float slowSpeedGapTime = 0.5f;
     float slowTimer = 0;
+    public int nowLvl = 0;
+
+    // 500, 1000, 1500, 2500, 4000, 6000, 1000
+    public float[] levelHeight = { 500, 1000, 1500, 2500, 4000, 6000, 10000 };
+    public float [] dangerousSpeeds = { 10, 20, 30, 60, 100, 150, 200 };
+
+    public float dangerousTimer = 1f;
+    public bool isDangerous = false;
+
+    public GameObject magma;
 
 
     public RoleControl roleControl;
@@ -53,14 +63,16 @@ public class GameManager : MonoBehaviour
 
     void GameReset()
     {
-        nowHeight = 0;
         state = GameState.Prepare;
-        health = 3;
+        
         GameStart();
     }
 
     void GameStart()
     {
+        nowHeight = 0;
+        health = 3;
+        nowLvl = 0;
         state = GameState.Running;
         upSpeed = 10;
     }
@@ -89,15 +101,36 @@ public class GameManager : MonoBehaviour
             slowTimer = 0;
         }
 
-        //int dangrousSpeed = nowHeight / 10;
         nowHeight += (deltaTime * upSpeed);
-        //if (state == GameState.Running)
+        if (nowHeight > levelHeight[nowLvl]) {
+            nowLvl++;
+            dangerousTimer = 1f;
+        }
+
+        if (upSpeed < dangerousSpeeds[nowLvl])
         {
-            if (nowHeight >= MAX_HEIGHT)
-            {
-                state = GameState.Win;
-                GameEnd();
-            }
+            dangerousTimer -= deltaTime;
+        }
+        else
+        {
+            dangerousTimer = 1;
+        }
+        if (dangerousTimer < 0)
+        {
+            isDangerous = true;
+            magma.SetActive(isDangerous);
+        }
+        else
+        {
+            isDangerous = false;
+            magma.SetActive(isDangerous);
+
+        }
+
+        if (nowHeight >= MAX_HEIGHT)
+        {
+            state = GameState.Win;
+            GameEnd();
         }
     }
 
@@ -118,6 +151,13 @@ public class GameManager : MonoBehaviour
         upSpeed = upSpeed * 0.9f;
     }
 
+    public void killRole()
+    {
+        roleControl.Dead();
+        state = GameState.Lose;
+        GameEnd();
+    }
+
     public void TakeDamage()
     {
         if (roleControl.isWuDi == true)
@@ -127,9 +167,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("ПлбЊ" + health);
         if (health == 0)
         {
-            roleControl.Dead();
-            state = GameState.Lose;
-            GameEnd();
+            killRole();
         } else
         {
             roleControl.AddWuDiTime(wuDiTime);

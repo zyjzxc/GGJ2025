@@ -38,7 +38,7 @@ public class MonsterController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(GameManager._instance.roleControl.IsCauseDamage())
             Die();
