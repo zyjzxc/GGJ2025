@@ -47,6 +47,7 @@ public class MonsterController : MonoBehaviour
     virtual protected void Die()
     {
         GameManager._instance.AddSpeed(point);
+        ScreenShake.instance.InduceStress(0.7f);
         Destroy(gameObject, 0.1f);
     }
 }
