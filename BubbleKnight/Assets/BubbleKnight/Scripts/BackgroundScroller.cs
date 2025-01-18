@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BackgroundScroller : MonoBehaviour
 {
-    private float scrollSpeed = 5.0f; // 滚动速度，可以根据需要调整
+    public float scrollSpeed = 5.0f; // 滚动速度，可以根据需要调整
     public Renderer backgroundRenderer1; // 第一个背景图的渲染器
     public Renderer backgroundRenderer2; // 第二个背景图的渲染器
     public float backgroundSize; // 背景图的高度
@@ -24,12 +24,12 @@ public class BackgroundScroller : MonoBehaviour
     {
         // 计算背景图的偏移量
         scrollSpeed = GameManager._instance.upSpeed;
-        float offset = Time.time * scrollSpeed;
+        float offset = -backgroundRenderer1.transform.position.y + Time.deltaTime * scrollSpeed * 0.8f;
 
 
         // 计算背景图的新位置
         float newPosition1 = offset % (2 * backgroundSize);
-        float newPosition2 = newPosition1 - backgroundSize;
+        float newPosition2 = (newPosition1 - backgroundSize);
 
 
         // 更新背景图的位置
@@ -40,11 +40,11 @@ public class BackgroundScroller : MonoBehaviour
         // 边界检查和重置逻辑
         if (backgroundRenderer1.transform.position.y <= -backgroundSize)
         {
-            backgroundRenderer1.transform.position += new Vector3(0, 2 * backgroundSize, 0);
+            backgroundRenderer1.transform.position += new Vector3(0, backgroundSize, 0);
         }
         if (backgroundRenderer2.transform.position.y <= -backgroundSize)
         {
-            backgroundRenderer2.transform.position += new Vector3(0, 2 * backgroundSize, 0);
+            backgroundRenderer2.transform.position += new Vector3(0, backgroundSize, 0);
         }
     }
 }
