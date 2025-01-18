@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     void GameEnd()
     {
         Debug.Log("ÓÎÏ·½áÊø");
+        upSpeed = 0;
     }
 
     // Update is called once per frame
@@ -112,6 +113,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("¿ÛÑª" + health);
         if (health < 0)
         {
+            roleControl.Dead();
             state = GameState.Lose;
             GameEnd();
         }

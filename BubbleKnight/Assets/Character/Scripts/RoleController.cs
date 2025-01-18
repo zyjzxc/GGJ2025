@@ -59,6 +59,8 @@ public class RoleControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (roleState == RoleState.Dead)
+            return;
         Move();
         Attack();
         Attacking();
@@ -177,6 +179,11 @@ public class RoleControl : MonoBehaviour
         roleState = RoleState.PostAttack;
         move.y = attackSpeed;
         attackEffect = true;
+    }
+
+    public void Dead()
+    {
+        roleState = RoleState.Dead;
     }
 
     private void PostAttacking()
