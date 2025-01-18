@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
 
     public void SetTarget(float now, float target)
     {
-        targetUI.GetComponent<TextMeshProUGUI>().text = (int)now + " m" + " / " + (int)target + " m";
+        //targetUI.GetComponent<TextMeshProUGUI>().text = (int)now + " m" + " / " + (int)target + " m";
         float p = now / target;
         p = Mathf.Clamp01(p);
         p = Mathf.Pow(p, 0.4f);
