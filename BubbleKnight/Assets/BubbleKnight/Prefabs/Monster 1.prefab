@@ -262,5 +262,5 @@ MonoBehaviour:
   point: 3
   health2: 2
   moveSpeed: 3
-  floatSpeed: 1
-  floatAmplitude: 1
+  floatSpeed: 0.5
+  floatAmplitude: 3

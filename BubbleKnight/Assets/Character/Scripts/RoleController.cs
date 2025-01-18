@@ -81,7 +81,7 @@ public class RoleControl : MonoBehaviour
 
         targetVelocity = move * maxSpeed;
         body.velocity = targetVelocity;
-        body.velocity += Physics2D.gravity * 0.1f;
+        body.velocity += Physics2D.gravity * 0.2f;
 
 
         Bound();

@@ -263,4 +263,4 @@ MonoBehaviour:
   health2: 1
   moveSpeed: 3
   floatSpeed: 1
-  floatAmplitude: 1
+  floatAmplitude: 0.5

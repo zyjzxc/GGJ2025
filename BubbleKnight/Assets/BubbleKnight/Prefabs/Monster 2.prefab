@@ -263,6 +263,6 @@ MonoBehaviour:
   health2: 1
   moveSpeed: 2
   floatSpeed: 1
-  floatAmplitude: 1
+  floatAmplitude: 0.5
   buiPrefab: {fileID: 7932485592409327062, guid: 20b961fc6e34d1b4ab38ae9899624e00,
     type: 3}
