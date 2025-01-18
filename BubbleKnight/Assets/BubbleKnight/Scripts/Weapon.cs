@@ -20,7 +20,11 @@ public class Weapon : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Magma>())
             return;
-        Debug.Log("碰怪" + collision.name);
+
+        if(collision.gameObject.layer == 10) // 如果是子弹就砍不掉
+        {
+            return;
+        }
         GameManager._instance.roleControl.StopAttack(false);
     }
 }

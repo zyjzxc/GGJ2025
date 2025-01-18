@@ -9,7 +9,6 @@ public class MonsterSpawner : MonoBehaviour
     public List<Transform> spawnPoints = new List<Transform>();
     public int maxMonsters = 5;
 
-
     private float timer = 0f;
     private List<GameObject> activeMonsters = new List<GameObject>();
     private HashSet<int> boomIndex = new HashSet<int>();
@@ -92,5 +91,13 @@ public class MonsterSpawner : MonoBehaviour
             activeMonsters[item].GetComponent<MonsterController>().Hurt();
         }
         boomIndex.Clear();
+    }
+    
+    public GameObject AddBuiBui(GameObject obj, Vector3 point)
+    {
+        // 实例化选中的怪物预制件
+        GameObject spawnedMonster = Instantiate(obj, point, Quaternion.identity);
+        activeMonsters.Add(spawnedMonster);
+        return spawnedMonster;
     }
 }

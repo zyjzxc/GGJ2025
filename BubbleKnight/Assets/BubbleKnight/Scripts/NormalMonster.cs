@@ -18,7 +18,7 @@ public class NormalMonster : MonsterController
     }
 
 
-    void Update()
+    protected virtual void Update()
     {
         // ◊Û”““∆∂Ø
         float horizontalMovement = moveSpeed * Time.deltaTime * (movingRight ? 1 : -1);

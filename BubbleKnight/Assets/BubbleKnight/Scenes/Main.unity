@@ -959,7 +959,7 @@ MonoBehaviour:
   - {fileID: 1388149564}
   - {fileID: 1345644831}
   - {fileID: 35558397}
-  maxMonsters: 10
+  maxMonsters: 5
 --- !u!114 &1754240614
 MonoBehaviour:
   m_ObjectHideFlags: 0

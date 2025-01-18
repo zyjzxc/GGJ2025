@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2114885224803525304}
   - component: {fileID: 7868219253117766950}
   - component: {fileID: 3960069196016434504}
-  - component: {fileID: 7901390086236514956}
-  m_Layer: 7
-  m_Name: Monster 2
+  - component: {fileID: 4739594433540804039}
+  m_Layer: 10
+  m_Name: Bullet
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1907945055
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 5e789879dda4a8d40b8a2ce6c105db7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 413622dfc7f6ac847ab42f07d996a7af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -246,7 +246,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7901390086236514956
+--- !u!114 &4739594433540804039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,14 +255,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7932485592409327062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b875035a6c37c084fa2921d94be9491d, type: 3}
+  m_Script: {fileID: 11500000, guid: 089a480c55fefa542a42d5f2beb6b0db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monsterState: 0
   point: 3
-  health2: 1
-  moveSpeed: 2
-  floatSpeed: 1
-  floatAmplitude: 1
-  buiPrefab: {fileID: 7932485592409327062, guid: 20b961fc6e34d1b4ab38ae9899624e00,
-    type: 3}
+  health2: 2
+  moveVector: {x: 0, y: 0, z: 0}
+  speed: 2
