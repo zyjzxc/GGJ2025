@@ -260,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterState: 0
   point: 3
-  moveSpeed: 5
+  health2: 1
+  moveSpeed: 2
   floatSpeed: 1
-  floatAmplitude: 1
+  floatAmplitude: 0.8

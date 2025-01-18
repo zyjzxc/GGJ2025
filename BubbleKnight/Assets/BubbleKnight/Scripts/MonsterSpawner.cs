@@ -16,6 +16,18 @@ public class MonsterSpawner : MonoBehaviour
     {
         GameManager._instance.monsterSpawner = this;
     }
+
+    private int GetMonsterNum()
+    {
+        int num = 0;
+        foreach (var go in activeMonsters )
+        {
+            if (go && go.layer == 7)
+                num++;
+        }
+        return num;
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
@@ -23,7 +35,7 @@ public class MonsterSpawner : MonoBehaviour
         monsterPrefabs = GameManager._instance.GetMonsterPrefabs();
         maxMonsters = GameManager._instance.GetMaxMonsterNum();
         // 当计时器超过生成间隔且同时存在的怪物数未达到上限时
-        if (timer >= spawnInterval && activeMonsters.Count < maxMonsters)
+        if (timer >= spawnInterval && GetMonsterNum() < maxMonsters)
         {
             SpawnMonster();
             timer = 0f;
