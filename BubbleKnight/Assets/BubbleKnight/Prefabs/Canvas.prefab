@@ -122,7 +122,7 @@ MonoBehaviour:
   - {fileID: 9132100385880905503}
   - {fileID: 6022161823976814535}
   speedUI: {fileID: 5210111032905712003}
-  speedProgress: {fileID: 7557681351463357007}
+  speedProgress: {fileID: 8100343171348003781}
   targetUI: {fileID: 0}
   progress: {fileID: 7557681351463357007}
 --- !u!1 &1241478410749546742
@@ -423,8 +423,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4288190616
+  m_fontColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0.72156864}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
