@@ -8,13 +8,12 @@ public class UIProgress : MonoBehaviour
     public float progress = 0;
     private RectTransform childRectTransform;
     RectTransform rectTransform;
-    float maxHeight = 300;
+    float maxHeight = 940;
     // Start is called before the first frame update
     void Start()
     {
         childRectTransform = transform.GetChild(0).GetComponent<RectTransform>();
         rectTransform = GetComponent<RectTransform>();
-
         //maxHeight = rectTransform.rect.height - childRectTransform.rect.height / 2;
     }
 

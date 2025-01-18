@@ -999,8 +999,8 @@ MonoBehaviour:
   health: 3
   nowLvl: 0
   monsterPrefabs0:
-  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
-  - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
+  - {fileID: 7932485592409327062, guid: 9b47828f84fb5d64cbaca320e5eb1b85, type: 3}
   monsterPrefabs1:
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
   - {fileID: 7932485592409327062, guid: 608ef5e192db7664baf4a5a777e3e04b, type: 3}
@@ -1302,31 +1302,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2297035735370148295, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.15580833
-      objectReference: {fileID: 0}
-    - target: {fileID: 2297035735370148295, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.6886792
-      objectReference: {fileID: 0}
-    - target: {fileID: 2297035735370148295, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.048727296
-      objectReference: {fileID: 0}
-    - target: {fileID: 2819707805622825682, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -658
-      objectReference: {fileID: 0}
-    - target: {fileID: 2819707805622825682, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -643
-      objectReference: {fileID: 0}
     - target: {fileID: 3855723194591770121, guid: f852ec1018279e9448bf8d8469fc1a50,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1431,21 +1406,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829821322231963221, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829821322231963221, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1863
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829821322231963221, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 37.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
