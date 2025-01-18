@@ -9,10 +9,13 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     public GameObject healthPrefab;
+    public Gradient healthGradient;
+    
     private GameObject health;
     public List<GameObject> healthUI;
 
     public GameObject speedUI;
+    public GameObject speedHandle;
     public GameObject speedProgress;
     public GameObject targetUI;
 
@@ -69,6 +72,7 @@ public class UIManager : MonoBehaviour
         float progress = speed / 200;
         progress = Mathf.Clamp01(progress);
         speedProgress.GetComponent<Scrollbar>().size = progress;
+        speedHandle.GetComponent<Image>().color = healthGradient.Evaluate(progress);
     }
 
     public void SetTarget(float now, float target)
