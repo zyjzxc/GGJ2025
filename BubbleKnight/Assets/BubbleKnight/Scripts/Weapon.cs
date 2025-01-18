@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("ล๖นึ" + collision.name);
-
+        ScreenShake.instance.InduceStress(0.7f);
         GameManager._instance.roleControl.StopAttack(false);
     }
 }
