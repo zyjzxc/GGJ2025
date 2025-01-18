@@ -539,7 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumTranslationShake: {x: 0.5, y: 0.5, z: 0.5}
-  maximumAngularShake: {x: 0, y: 2, z: 0}
+  maximumAngularShake: {x: 2, y: 2, z: 2}
   frequency: 25
   recoverySpeed: 1.5
   traumaExponent: 2
