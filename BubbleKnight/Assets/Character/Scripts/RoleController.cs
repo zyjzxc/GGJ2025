@@ -213,7 +213,7 @@ public class RoleControl : MonoBehaviour
 
     private bool CanMove()
     {
-        if(roleState == RoleState.Idle || roleState == RoleState.Attack)
+        if(roleState == RoleState.Idle || roleState == RoleState.Attack || roleState == RoleState.PostAttack)
         {
             return true;
         }
