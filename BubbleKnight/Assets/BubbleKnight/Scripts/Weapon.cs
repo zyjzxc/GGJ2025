@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.GetComponent<Magma>())
+            return;
         Debug.Log("ล๖นึ" + collision.name);
         GameManager._instance.roleControl.StopAttack(false);
     }
