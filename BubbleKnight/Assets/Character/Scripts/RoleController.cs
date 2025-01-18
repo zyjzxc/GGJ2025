@@ -23,10 +23,21 @@ public class RoleControl : MonoBehaviour
     public float maxY = 2.12f; // 最高高度
     public float attackSpeed = 4;
 
+    public Vector2 boundMin;
+    public Vector2 boundMax;
+
+    SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("碰怪" + collision.name);
     }
 
     // Update is called once per frame
@@ -39,6 +50,16 @@ public class RoleControl : MonoBehaviour
 
         targetVelocity = move * maxSpeed;
         body.velocity = targetVelocity;
+
+        Bound();
+    }
+
+    private void Bound()
+    {
+        float y = Mathf.Min(transform.position.y, boundMax.y);
+        float x = Mathf.Max(transform.position.x, boundMin.x);
+        x = Mathf.Min(x, boundMax.x);
+        transform.position = new Vector3(x, y, 0);
     }
 
     private void Move()
@@ -58,6 +79,11 @@ public class RoleControl : MonoBehaviour
         {
             move.x = 0;
         }
+
+        if (move.x > 0.01f)
+            spriteRenderer.flipX = false;
+        else if (move.x < -0.01f)
+            spriteRenderer.flipX = true;
     }
 
     private void Attack()
