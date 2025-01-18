@@ -8,7 +8,7 @@ public class Bullet : MonsterController
     public float speed = 1;
 
     // Update is called once per frame
-    void Update()
+    protected override void  Update()
     {
         if (IsAtScreenEdge())
         {

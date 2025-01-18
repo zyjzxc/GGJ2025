@@ -10,6 +10,9 @@ public class NormalMonster : MonsterController
     protected float initialY;
     protected float floatTimer = 0.0f;
     protected bool movingRight = true;
+    private float moveDownSpeed = 5.0f;
+    private float moveDownDuration = 1.0f;
+    private float moveDownTimer = 0.0f;
 
 
     void Start()
@@ -18,7 +21,7 @@ public class NormalMonster : MonsterController
     }
 
 
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
         // 左右移动
         float horizontalMovement = moveSpeed * Time.deltaTime * (movingRight ? 1 : -1);
@@ -46,8 +49,24 @@ public class NormalMonster : MonsterController
         {
             return true;
         }
-
-
         return false;
+    }
+
+    public override void Hurt()
+    {
+        base.Hurt();
+        MoveDownImmediately();
+    }
+
+
+    public void MoveDownImmediately()
+    {
+        // 当调用该方法时，将上下浮动的方向改为向下
+        //floatTimer += Mathf.PI; //loatTimer ) % (2 * Mathf.PI);
+        var piDiv2 = Mathf.PI * 0.5f;
+        var rate =  (int)(floatTimer / piDiv2);
+        if (rate % 2 == 1) return;
+        floatTimer += 2 * (piDiv2 - (floatTimer % piDiv2));
+
     }
 }

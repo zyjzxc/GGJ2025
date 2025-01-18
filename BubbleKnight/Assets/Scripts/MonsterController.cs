@@ -15,6 +15,7 @@ public class MonsterController : MonoBehaviour
     public MonsterState monsterState;
     public int point = 3;
     public int health2 = 1;
+    protected bool isHurted = false;
 
     public void InitMonster(Vector3 pos)
     {
@@ -26,9 +27,9 @@ public class MonsterController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        
+        //isHurted = false ;
     }
 
 
@@ -48,6 +49,8 @@ public class MonsterController : MonoBehaviour
 
     public virtual void Hurt()
     {
+        //if (isHurted)
+        //    return;
         if (monsterState == MonsterState.Dead) return;
 
         health2--;

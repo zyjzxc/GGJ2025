@@ -10,7 +10,7 @@ public class Magma : MonsterController
     const float MAX_HEIGHT = -1;
     const float DEATH_HEIGHT = -4;
 
-    private void Update()
+    protected override void Update()
     {
         float deltaTime = Time.deltaTime;
         if (GameManager._instance.GetDangerous())
