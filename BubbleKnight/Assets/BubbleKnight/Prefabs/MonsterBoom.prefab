@@ -264,4 +264,4 @@ MonoBehaviour:
   moveSpeed: 2
   floatSpeed: 1
   floatAmplitude: 1
-  boomRange: 3
+  boomRange: 1000
