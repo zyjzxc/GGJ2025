@@ -90,7 +90,7 @@ public class RoleControl : MonoBehaviour
 
         targetVelocity = move * maxSpeed;
         body.velocity = targetVelocity;
-        body.velocity += Physics2D.gravity * 0.2f;
+        body.velocity += Physics2D.gravity * GameManager._instance.GetGravity();
 
 
         Bound();

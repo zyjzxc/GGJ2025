@@ -51,6 +51,13 @@ public class GameManager : MonoBehaviour
     private float[] spawnIntervals = { 1f, 0.8f, 0.6f, 0.4f, 0.3f, 0.2f, 0.1f, 0.1f, 0.1f, 0.1f};
     private float[] slowSpeedGapTimes = { 0.3f, 0.3f, 0.25f, 0.25f, 0.2f, 0.15f, 0.1f, 0.05f, 0.04f, 0.02f};
 
+    private float[] gravity = { 0.1f, 0.1f, 0.2f, 0.2f, 0.2f, 0.2f, 0.25f, 0.25f, 0.25f, 0.25f };
+
+    public float GetGravity()
+    {
+        return gravity[nowLvl];
+    }
+
     public float GetSpawnInterval()
     {
         return spawnIntervals[nowLvl];
