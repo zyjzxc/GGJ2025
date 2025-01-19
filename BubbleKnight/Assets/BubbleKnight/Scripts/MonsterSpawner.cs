@@ -28,6 +28,17 @@ public class MonsterSpawner : MonoBehaviour
         return num;
     }
 
+    private int GetPropNum()
+    {
+        int num = 0;
+        foreach (var go in activeMonsters)
+        {
+            if (go && go.layer == 8)
+                num++;
+        }
+        return num;
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
@@ -53,7 +64,10 @@ public class MonsterSpawner : MonoBehaviour
         {
             int randomMonsterIndex = Random.Range(0, monsterPrefabs.Length);
             GameObject selectedMonsterPrefab = monsterPrefabs[randomMonsterIndex];
-
+            if (selectedMonsterPrefab.layer == 8 && GetPropNum() >= 2)
+            {
+                selectedMonsterPrefab = monsterPrefabs[0];
+            }
 
             int randomSpawnPointIndex = Random.Range(0, spawnPoints.Count);
             Transform selectedSpawnPoint = spawnPoints[randomSpawnPointIndex];
@@ -101,6 +115,7 @@ public class MonsterSpawner : MonoBehaviour
 
     public void HurtBoom()
     {
+        AudioManager.Instance.PlaySound(7);
         foreach (var item in boomIndex)
         {
             if(activeMonsters[item] != null)
