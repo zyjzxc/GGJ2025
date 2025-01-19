@@ -33,19 +33,12 @@ public class LocalLeaderboard : MonoBehaviour
 
     void ShowRank()
     {
-        rankShow = !rankShow;
-        UIManager.instance.rankUI.SetActive(rankShow);
-
-        if(rankShow)
+        for (int i = 0; i < leaderboardTexts.Length; i++)
         {
-            ShowLeaderboard();
-            for (int i = 0; i < leaderboardTexts.Length; i++)
-            {
-                UIManager.instance.rankUI.transform.GetChild(9-i).GetComponent<TextMeshProUGUI>().text = leaderboardTexts[i];
-            }
-            UIManager.instance.rankUI.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = ((int)GameManager._instance.nowHeight).ToString();
+            UIManager.instance.rankUI.transform.GetChild(9 - i).GetComponent<TextMeshProUGUI>().text = leaderboardTexts[i];
         }
-        
+        UIManager.instance.rankUI.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = ((int)GameManager._instance.nowHeight).ToString();
+
     }
 
     // ´æ´¢Íæ¼Ò·ÖÊý
@@ -95,6 +88,8 @@ public class LocalLeaderboard : MonoBehaviour
                 break;
             }
         }
+
+        ShowRank();
     }
 
 

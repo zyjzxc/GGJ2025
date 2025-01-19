@@ -134,9 +134,9 @@ public class GameManager : MonoBehaviour
     void GameEnd()
     {
         Debug.Log("”Œœ∑Ω· ¯");
+        EndUI.SetActive(true);
         LocalLeaderboard.instance.SaveScore((int)nowHeight);
         LocalLeaderboard.instance.ShowLeaderboard();
-        EndUI.SetActive(true);
         EndText.GetComponent<TextMeshProUGUI>().text = state.ToString(); 
         upSpeed = 0;
     }
