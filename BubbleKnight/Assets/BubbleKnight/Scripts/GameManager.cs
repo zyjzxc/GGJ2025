@@ -181,6 +181,8 @@ public class GameManager : MonoBehaviour
 
         nowTime += Time.deltaTime;
 
+        UIManager.instance.SetTime(nowTime);
+
         UIManager.instance.SetSpeed(upSpeed);
         UIManager.instance.SetTarget(nowHeight, MAX_HEIGHT);
 

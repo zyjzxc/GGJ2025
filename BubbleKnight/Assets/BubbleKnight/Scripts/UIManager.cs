@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     public GameObject progress;
 
     public GameObject rankUI;
+    public GameObject timeUI;
 
     private void Awake()
     {
@@ -86,6 +87,15 @@ public class UIManager : MonoBehaviour
         p = Mathf.Clamp01(p);
         p = Mathf.Pow(p, 0.4f);
         progress.GetComponent<UIProgress>().SetProcess(p);
+    }
+
+    public void SetTime(float seconds)
+    {
+        int minutes = Mathf.FloorToInt(seconds / 60);
+        int secs = Mathf.FloorToInt(seconds % 60);
+        string str = string.Format("{0:00}:{1:00}", minutes, secs);
+
+        timeUI.GetComponent<TextMeshProUGUI>().text = str;
     }
 
     public void TipsText(string str, Vector3 pointWS, float scale, Color color)
