@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     public RoleControl roleControl;
     public MonsterSpawner monsterSpawner;
-    public float wuDiTime = 0.5f;
+    public float wuDiTime = 1f;
 
     GameState state = GameState.Prepare;
     // Start is called before the first frame update

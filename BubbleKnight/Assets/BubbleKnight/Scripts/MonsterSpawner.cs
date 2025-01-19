@@ -115,12 +115,13 @@ public class MonsterSpawner : MonoBehaviour
 
     public void HurtBoom()
     {
-        AudioManager.Instance.PlaySound(7);
         foreach (var item in boomIndex)
         {
             if(activeMonsters[item] != null)
                 activeMonsters[item].GetComponent<MonsterController>().Hurt();
         }
+        if (boomIndex.Count > 0)
+            AudioManager.Instance.PlaySound(7);
         boomIndex.Clear();
     }
     
