@@ -262,4 +262,4 @@ MonoBehaviour:
   point: 3
   health2: 2
   moveVector: {x: 0, y: 0, z: 0}
-  speed: 2
+  speed: 4
