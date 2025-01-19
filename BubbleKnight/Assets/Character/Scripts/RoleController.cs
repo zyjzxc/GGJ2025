@@ -43,7 +43,6 @@ public class RoleControl : MonoBehaviour
     private float wuDiTime = 0;
 
     public GameObject weapon;
-    bool isInAttack = false;
 
     // Start is called before the first frame update
     void Start()
@@ -94,12 +93,13 @@ public class RoleControl : MonoBehaviour
 
     private void WuDi()
     {
-        if(wuDiTime > 0)
+        if (wuDiTime > 0)
         {
             wuDiTime -= Time.deltaTime;
             spriteRenderer.color = Color.yellow;
             isWuDi = true;
-        } else
+        }
+        else
         {
             isWuDi = false;
             wuDiTime = 0;
@@ -117,7 +117,7 @@ public class RoleControl : MonoBehaviour
         if (roleState == RoleState.Idle)
         {
             spriteRenderer.sprite = spriteIdle;
-        } 
+        }
         else if (roleState == RoleState.Attack)
         {
 
@@ -129,16 +129,19 @@ public class RoleControl : MonoBehaviour
             {
                 spriteRenderer.sprite = spriteAttacking;
                 attackEffect = false;
-            } else
+            }
+            else
             {
-                if(attackTimeAdd > attackTime)
+                if (attackTimeAdd > attackTime)
                 {
                     attackTimeAdd = 0;
                     spriteRenderer.sprite = spriteIdle;
-                } else if (attackTimeAdd > attackTime/1.5)
+                }
+                else if (attackTimeAdd > attackTime / 1.5)
                 {
                     spriteRenderer.sprite = spriteAttack2;
-                } else
+                }
+                else
                 {
                     attackTimeAdd += Time.deltaTime;
                 }
@@ -192,7 +195,7 @@ public class RoleControl : MonoBehaviour
 
     private void Attacking()
     {
-        if(roleState != RoleState.Attack)
+        if (roleState != RoleState.Attack)
         {
             return;
         }
@@ -210,9 +213,9 @@ public class RoleControl : MonoBehaviour
 
     private void OutScreenY()
     {
-        if(transform.position.y < minY)
+        if (transform.position.y < minY)
         {
-            UIManager.instance.TipsText("Miss", transform.position + new Vector3(0,1.5f,0), 1.5f, Color.cyan);
+            UIManager.instance.TipsText("Miss", transform.position + new Vector3(0, 1.5f, 0), 1.5f, Color.cyan);
             transform.position = new Vector3(transform.position.x, minY + 0.01f, transform.position.z);
             GameManager._instance.SlowDown();
             StopAttack(true);
@@ -224,35 +227,13 @@ public class RoleControl : MonoBehaviour
     {
         if (roleState == RoleState.Dead || GameManager._instance.IsGameEnd())
             return;
-
-        if (!isInAttack)
-        {
-            AudioManager.Instance.PlaySound(0);
-            isInAttack = true;
-            if (isMiss)
-                GameManager._instance.ConitnueHit(true);
-            
-            
-            StartCoroutine(ChangePostAttack(isMiss));
-        }
-        //roleState = RoleState.PostAttack; // ÇÐ×´Ì¬
-
-    }
-
-    IEnumerator ChangePostAttack(bool isMiss)
-    {
-        int count = 2;
-        while (count > 0)
-        {
-            yield return new WaitForSeconds(0.01f);
-            count--;
-        }
-
+        AudioManager.Instance.PlaySound(0);
+        if (isMiss)
+            GameManager._instance.ConitnueHit(true);
         weapon.SetActive(false);
         roleState = RoleState.PostAttack;
         move.y = isMiss ? attackSpeed * 0.5f : attackSpeed;
         attackEffect = true;
-        isInAttack = false;
     }
 
     public void Dead()
@@ -262,7 +243,7 @@ public class RoleControl : MonoBehaviour
 
     private void PostAttacking()
     {
-        if(roleState != RoleState.PostAttack)
+        if (roleState != RoleState.PostAttack)
         {
             return;
         }
@@ -280,7 +261,7 @@ public class RoleControl : MonoBehaviour
 
     private bool CanMove()
     {
-        if(roleState == RoleState.Idle || roleState == RoleState.Attack || roleState == RoleState.PostAttack)
+        if (roleState == RoleState.Idle || roleState == RoleState.Attack || roleState == RoleState.PostAttack)
         {
             return true;
         }
@@ -302,9 +283,9 @@ public class RoleControl : MonoBehaviour
     {
         if (GameManager._instance.IsGameEnd())
             return false;
-        if(roleState == RoleState.Attack)
+        if (roleState == RoleState.Attack)
         {
-            return true ;
+            return true;
         }
         return false;
     }
