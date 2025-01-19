@@ -273,6 +273,8 @@ public class RoleControl : MonoBehaviour
 
     public bool IsCauseDamage()
     {
+        if (GameManager._instance.IsGameEnd())
+            return false;
         if(roleState == RoleState.Attack)
         {
             return true ;

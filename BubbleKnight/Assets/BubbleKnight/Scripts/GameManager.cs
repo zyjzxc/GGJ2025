@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -22,6 +24,11 @@ public struct GameData
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
+
+    public GameObject EndUI;
+
+    public GameObject EndText;
+
     public const int MAX_HEART = 5;
     public const float MAX_HEIGHT = 10000;
     public float nowHeight = 0;
@@ -119,11 +126,14 @@ public class GameManager : MonoBehaviour
         nowLvl = 0;
         state = GameState.Running;
         upSpeed = 10;
+        EndUI.SetActive(false);
     }
 
     void GameEnd()
     {
         Debug.Log("”Œœ∑Ω· ¯");
+        EndUI.SetActive(true);
+        EndText.GetComponent<TextMeshProUGUI>().text = state.ToString(); 
         upSpeed = 0;
     }
 
