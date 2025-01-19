@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public const int MAX_HEART = 5;
     public const float MAX_HEIGHT = 10000;
     public float nowHeight = 0;
+    public float nowTime = 0;
     public float upSpeed = 0;
     public int health = MAX_HEART;
 
@@ -123,6 +124,7 @@ public class GameManager : MonoBehaviour
     {
         continueHitTime = 0;
         nowHeight = 0;
+        nowTime = 0;
         health = MAX_HEART;
         UIManager.instance.SetHealth(health);
         nowLvl = 0;
@@ -136,6 +138,7 @@ public class GameManager : MonoBehaviour
         if (state == GameState.Win)
         {
             AudioManager.Instance.PlaySound(5);
+            LocalLeaderboard.instance.SaveScore((int)nowTime);
         }
         else
         {
@@ -143,7 +146,6 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log("”Œœ∑Ω· ¯");
         EndUI.SetActive(true);
-        LocalLeaderboard.instance.SaveScore((int)nowHeight);
         LocalLeaderboard.instance.ShowLeaderboard();
         EndText.GetComponent<TextMeshProUGUI>().text = state.ToString(); 
         upSpeed = 0;
@@ -169,6 +171,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (state != GameState.Running) return;
+
+        nowTime += Time.deltaTime;
 
         UIManager.instance.SetSpeed(upSpeed);
         UIManager.instance.SetTarget(nowHeight, MAX_HEIGHT);
