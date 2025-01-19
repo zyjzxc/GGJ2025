@@ -864,6 +864,7 @@ GameObject:
   - component: {fileID: 1754240612}
   - component: {fileID: 1754240613}
   - component: {fileID: 1754240614}
+  - component: {fileID: 1754240615}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1075,6 +1076,23 @@ MonoBehaviour:
   backgroundRenderer1: {fileID: 1774151493}
   backgroundRenderer2: {fileID: 2132043291}
   backgroundSize: 0
+--- !u!114 &1754240615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42fb135450f1fb4285a66fa548fb7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips:
+  - {fileID: 8300000, guid: 3733f86ecb2dbd44995d689d94f7b1a6, type: 3}
+  - {fileID: 8300000, guid: 80795503ea609d64fa3e66a5bfa0cb41, type: 3}
+  - {fileID: 8300000, guid: 63aa893d132cadf4ba23d176cd7b4644, type: 3}
+  - {fileID: 8300000, guid: 93781eb88c8483742bdce1efde59af69, type: 3}
 --- !u!1 &1774151492
 GameObject:
   m_ObjectHideFlags: 0

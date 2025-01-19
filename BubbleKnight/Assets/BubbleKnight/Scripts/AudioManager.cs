@@ -12,13 +12,10 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+    }
+    void Start()
+    {
         // 根据音效数量初始化AudioSource数组
         audioSources = new AudioSource[soundClips.Length];
         for (int i = 0; i < soundClips.Length; i++)
