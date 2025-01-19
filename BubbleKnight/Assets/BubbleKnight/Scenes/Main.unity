@@ -341,6 +341,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1f7acf29eceb744892afdaae399b0d, type: 3}
+--- !u!114 &316703826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3900940750852763046, guid: 5f1f7acf29eceb744892afdaae399b0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 225272430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1f49166a5247647beb2e30da7d927a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &429604846
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +419,7 @@ SpriteRenderer:
   m_Size: {x: 19.67, y: 19.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &429604848
@@ -436,7 +448,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420034}
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
@@ -455,40 +466,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1055,7 +1032,7 @@ MonoBehaviour:
   continueHitTime: 0
   dangerousTimer: 1
   magma: {fileID: 1664591973}
-  roleControl: {fileID: 0}
+  roleControl: {fileID: 316703826}
   monsterSpawner: {fileID: 0}
   wuDiTime: 0.5
 --- !u!114 &1754240613
@@ -1459,11 +1436,6 @@ PrefabInstance:
     - target: {fileID: 4060089371919099457, guid: f852ec1018279e9448bf8d8469fc1a50,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8028798755438126033, guid: f852ec1018279e9448bf8d8469fc1a50,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

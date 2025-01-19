@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -113,7 +112,7 @@ public class UIManager : MonoBehaviour
         {
             uiInstance.transform.position = screenPosition;
         }
-        uiInstance.transform.DOScale(new Vector3(scale, scale, scale), 0.5f);//.DOShakePosition(0.5f);
+        //uiInstance.transform.DOScale(new Vector3(scale, scale, scale), 0.5f);//.DOShakePosition(0.5f);
         Destroy(uiInstance, 0.5f);
     }
 

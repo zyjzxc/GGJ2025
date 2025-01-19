@@ -43,14 +43,17 @@ public class RoleControl : MonoBehaviour
     private float wuDiTime = 0;
 
     public GameObject weapon;
+    private void Awake()
+    {
+        body = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         weapon.SetActive(false);
-        GameManager._instance.roleControl = this;
-        body = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //GameManager._instance.roleControl = this;
     }
 
     public void Reset()
