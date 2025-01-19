@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         if (state == GameState.Win)
         {
             AudioManager.Instance.PlaySound(5);
-            LocalLeaderboard.instance.SaveScore((int)nowTime);
+            LocalLeaderboard.instance.SaveScore(nowTime);
         }
         else
         {

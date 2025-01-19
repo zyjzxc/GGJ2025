@@ -27,19 +27,28 @@ public class LocalLeaderboard : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //} else if(Input.GetKeyDown(KeyCode.U))
+        //{
+        //    SaveScore(10000);
+        //}
     }
 
     void ShowRank()
     {
         for (int i = 0; i < leaderboardTexts.Length; i++)
         {
-            if(9-i <= hasRank)
+            int index = 9 - i;
+            if(i <= hasRank)
             {
-                UIManager.instance.rankUI.transform.GetChild(9 - i).GetComponent<TextMeshProUGUI>().text = leaderboardTexts[i];
+                float seconds = float.Parse(leaderboardTexts[i]);
+                int minutes = Mathf.FloorToInt(seconds / 60);
+                int secs = Mathf.FloorToInt(seconds % 60);
+                string str = string.Format("{0:00}:{1:00}", minutes, secs);
+
+                UIManager.instance.rankUI.transform.GetChild(index).GetComponent<TextMeshProUGUI>().text = "Rank " + (i + 1) + ": " + str;
             }
             
         }
@@ -48,27 +57,27 @@ public class LocalLeaderboard : MonoBehaviour
     }
 
     // 存储玩家分数
-    public void SaveScore(int score)
+    public void SaveScore(float score)
     {
         // 假设我们存储前 10 名的分数，使用 PlayerPrefs 存储分数
         for (int i = 1; i <= 10; i++)
         {
             if (!PlayerPrefs.HasKey("Score_" + i))
             {
-                PlayerPrefs.SetInt("Score_" + i, score);
+                PlayerPrefs.SetFloat("Score_" + i, score);
                 break;
             }
             else
             {
-                int existingScore = PlayerPrefs.GetInt("Score_" + i);
+                float existingScore = PlayerPrefs.GetFloat("Score_" + i);
                 if (score > existingScore)
                 {
                     // 移动后面的分数，为新分数腾出位置
                     for (int j = 9; j >= i; j--)
                     {
-                        PlayerPrefs.SetInt("Score_" + (j + 1), PlayerPrefs.GetInt("Score_" + j));
+                        PlayerPrefs.SetFloat("Score_" + (j + 1), PlayerPrefs.GetFloat("Score_" + j));
                     }
-                    PlayerPrefs.SetInt("Score_" + i, score);
+                    PlayerPrefs.SetFloat("Score_" + i, score);
                     break;
                 }
             }
@@ -83,10 +92,10 @@ public class LocalLeaderboard : MonoBehaviour
         {
             if (PlayerPrefs.HasKey("Score_" + i))
             {
-                int score = PlayerPrefs.GetInt("Score_" + i);
+                float score = PlayerPrefs.GetFloat("Score_" + i);
                 if (leaderboardTexts.Length >= i)
                 {
-                    leaderboardTexts[i - 1] = "Rank " + i + ": " + score;
+                    leaderboardTexts[i - 1] = score.ToString();
                 }
             }
             else
