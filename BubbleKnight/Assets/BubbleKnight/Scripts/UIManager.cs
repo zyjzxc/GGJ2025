@@ -86,13 +86,14 @@ public class UIManager : MonoBehaviour
         progress.GetComponent<UIProgress>().SetProcess(p);
     }
 
-    public void TipsText(string str, Vector3 pointWS)
+    public void TipsText(string str, Vector3 pointWS, float scale, Color color)
     {
         // 将世界坐标转换为屏幕坐标
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(pointWS);
         // 实例化 UI 元素
         GameObject uiInstance = Instantiate(tipsPrefab, this.transform);
         uiInstance.GetComponent<TextMeshProUGUI>().text = str;
+        uiInstance.GetComponent<TextMeshProUGUI>().color = color;
         uiInstance.transform.SetParent(this.transform);
         // 设置 UI 元素的位置
         RectTransform rectTransform = uiInstance.GetComponent<RectTransform>();
@@ -100,7 +101,7 @@ public class UIManager : MonoBehaviour
         {
             uiInstance.transform.position = screenPosition;
         }
-        //uiInstance..DOMove(new Vector3(0,1,0), 0.5f);
+        uiInstance.transform.DOScale(new Vector3(scale, scale, scale), 0.5f);//.DOShakePosition(0.5f);
         Destroy(uiInstance, 0.5f);
     }
 

@@ -208,6 +208,7 @@ public class RoleControl : MonoBehaviour
     {
         if(transform.position.y < minY)
         {
+            UIManager.instance.TipsText("Miss", transform.position + new Vector3(0,1.5f,0), 1.5f, Color.cyan);
             transform.position = new Vector3(transform.position.x, minY + 0.01f, transform.position.z);
             GameManager._instance.SlowDown();
             StopAttack(true);
