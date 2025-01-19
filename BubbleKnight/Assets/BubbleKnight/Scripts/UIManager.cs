@@ -85,7 +85,7 @@ public class UIManager : MonoBehaviour
         //targetUI.GetComponent<TextMeshProUGUI>().text = (int)now + " m" + " / " + (int)target + " m";
         float p = now / target;
         p = Mathf.Clamp01(p);
-        p = Mathf.Pow(p, 0.4f);
+        p = Mathf.Pow(p, 0.7f);
         progress.GetComponent<UIProgress>().SetProcess(p);
     }
 
