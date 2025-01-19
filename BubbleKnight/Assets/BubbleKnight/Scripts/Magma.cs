@@ -35,7 +35,7 @@ public class Magma : MonsterController
         }
         if (gameObject.transform.position.y > DEATH_HEIGHT)
         {
-            magmaSpeed = 1;
+            magmaSpeed = 2;
         }
         
 
