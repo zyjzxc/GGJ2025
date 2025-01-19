@@ -10,6 +10,18 @@ public class Magma : MonsterController
     const float MAX_HEIGHT = -1;
     const float DEATH_HEIGHT = -4;
 
+    public void Reset()
+    {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, MIN_HEIGHT, gameObject.transform.position.z);
+        gameObject.SetActive(false);
+
+    }
+
+    public override void OnResetEvent()
+    {
+        Reset();
+    }
+
     protected override void Update()
     {
         float deltaTime = Time.deltaTime;
@@ -31,8 +43,7 @@ public class Magma : MonsterController
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, y, gameObject.transform.position.z);
         if (gameObject.transform.position.y < MIN_HEIGHT - 0.5f)
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, MIN_HEIGHT, gameObject.transform.position.z); ;
-            gameObject.SetActive(false);
+            Reset();
         }
     }
 

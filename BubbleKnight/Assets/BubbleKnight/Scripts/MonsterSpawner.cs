@@ -62,6 +62,8 @@ public class MonsterSpawner : MonoBehaviour
             // 实例化选中的怪物预制件
             GameObject spawnedMonster = Instantiate(selectedMonsterPrefab, selectedSpawnPoint.position, Quaternion.identity);
 
+            spawnedMonster.transform.SetParent(GameManager._instance.gameObject.transform);
+
 
             // 将新生成的怪物添加到 activeMonsters 列表中
             activeMonsters.Add(spawnedMonster);
@@ -112,6 +114,7 @@ public class MonsterSpawner : MonoBehaviour
         // 实例化选中的怪物预制件
         GameObject spawnedMonster = Instantiate(obj, point, Quaternion.identity);
         activeMonsters.Add(spawnedMonster);
+        spawnedMonster.transform.SetParent(GameManager._instance.gameObject.transform);
         return spawnedMonster;
     }
 }

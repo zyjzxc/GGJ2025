@@ -53,6 +53,15 @@ public class RoleControl : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    public void Reset()
+    {
+        roleState = RoleState.Idle;
+
+        wuDiTime = 0;
+        gameObject.transform.position = new Vector3(-4.98500013f, 2.11999989f, 2f);
+        SetAnimation();
+    }
+
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
     //    Debug.Log("ล๖นึ" + collision.name);

@@ -111,10 +111,11 @@ public class GameManager : MonoBehaviour
         GameReset();
     }
 
-    void GameReset()
+    public void GameReset()
     {
         state = GameState.Prepare;
-        
+        roleControl.Reset();
+        BroadcastMessage("OnResetEvent");
         GameStart();
     }
 
@@ -123,6 +124,7 @@ public class GameManager : MonoBehaviour
         continueHitTime = 0;
         nowHeight = 0;
         health = MAX_HEART;
+        UIManager.instance.SetHealth(health);
         nowLvl = 0;
         state = GameState.Running;
         upSpeed = 10;

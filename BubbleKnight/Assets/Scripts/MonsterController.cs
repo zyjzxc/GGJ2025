@@ -26,6 +26,11 @@ public class MonsterController : MonoBehaviour
     {
     }
 
+    public virtual void OnResetEvent()
+    {
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
