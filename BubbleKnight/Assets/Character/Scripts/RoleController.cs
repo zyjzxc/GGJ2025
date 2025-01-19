@@ -62,11 +62,6 @@ public class RoleControl : MonoBehaviour
         SetAnimation();
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Debug.Log("Åö¹Ö" + collision.name);
-    //    StopAttack();
-    //}
 
     // Update is called once per frame
     void Update()
@@ -190,7 +185,6 @@ public class RoleControl : MonoBehaviour
         {
             move.y = -attackSpeed;
             roleState = RoleState.Attack;
-            Debug.Log("¹¥»÷");
             weapon.SetActive(true);
         }
     }

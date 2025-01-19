@@ -60,13 +60,13 @@ public class MonsterController : MonoBehaviour
         GameManager._instance.ConitnueHit(false);
         health2--;
 
-        if((GameManager._instance.continueHitTime + 1) % 10 == 0)
+        if((GameManager._instance.continueHitTime) % 10 == 0)
         {
             AudioManager.Instance.PlaySound(4);
             UIManager.instance.TipsText("Accelerate!!!", transform.position, 2, Color.red);
         } else
         {
-            UIManager.instance.TipsText((GameManager._instance.continueHitTime + 1) + " Hit", transform.position, 1.5f, Color.green);
+            UIManager.instance.TipsText((GameManager._instance.continueHitTime) + " Hit", transform.position, 1.5f, Color.green);
         }
 
         

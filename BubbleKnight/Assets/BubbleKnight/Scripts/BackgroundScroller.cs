@@ -23,7 +23,7 @@ public class BackgroundScroller : MonoBehaviour
     void Update()
     {
         // ¼ÆËã±³¾°Í¼µÄÆ«ÒÆÁ¿
-        scrollSpeed = GameManager._instance.upSpeed * 0.5f;
+        scrollSpeed = Mathf.Min(200f,GameManager._instance.upSpeed) * 0.5f;
         float offset = -backgroundRenderer1.transform.position.y + Time.deltaTime * scrollSpeed;
 
 
