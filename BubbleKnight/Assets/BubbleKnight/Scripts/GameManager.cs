@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] monsterPrefabs3;
     public GameObject[] monsterPrefabs4;
     private float[] levelHeight = { 200, 500, 1000, 1500, 2500, 4000, 6000, 10000, 15000, 25000};
-    private float [] dangerousSpeeds = {2, 20, 40, 70, 100, 150, 250, 300, 350, 350};
+    private float [] dangerousSpeeds = {10, 20, 40, 70, 100, 150, 250, 300, 350, 350};
     private int[] maxMonsterNum = { 5, 5, 5, 6, 6, 8, 8, 10, 10, 10};
     private float[] spawnIntervals = { 1f, 0.8f, 0.6f, 0.4f, 0.3f, 0.2f, 0.1f, 0.1f, 0.1f, 0.1f};
     private float[] slowSpeedGapTimes = { 0.3f, 0.3f, 0.25f, 0.25f, 0.2f, 0.15f, 0.1f, 0.05f, 0.04f, 0.02f};
