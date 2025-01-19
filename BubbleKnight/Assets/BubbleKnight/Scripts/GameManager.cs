@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
         if (continueHitTime % 10 == 0)
         {
             //AudioManager.Instance.PlaySound(4);
-            upSpeed += MathF.Min(50, continueHitTime);
+            upSpeed += MathF.Min(100, continueHitTime);
         }
 
     }
