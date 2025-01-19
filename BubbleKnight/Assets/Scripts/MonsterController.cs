@@ -60,7 +60,7 @@ public class MonsterController : MonoBehaviour
             UIManager.instance.TipsText("Accelerate!!!", transform.position, 2, Color.red);
         } else
         {
-            UIManager.instance.TipsText((GameManager._instance.continueHitTime + 1)%10 + " Hit", transform.position, 1.5f, Color.green);
+            UIManager.instance.TipsText((GameManager._instance.continueHitTime + 1) + " Hit", transform.position, 1.5f, Color.green);
         }
 
         
