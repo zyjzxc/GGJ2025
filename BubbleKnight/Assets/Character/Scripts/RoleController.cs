@@ -43,6 +43,7 @@ public class RoleControl : MonoBehaviour
     private float wuDiTime = 0;
 
     public GameObject weapon;
+    bool isInAttack = false;
 
     // Start is called before the first frame update
     void Start()
@@ -223,13 +224,35 @@ public class RoleControl : MonoBehaviour
     {
         if (roleState == RoleState.Dead || GameManager._instance.IsGameEnd())
             return;
-        AudioManager.Instance.PlaySound(0);
-        if (isMiss)
-            GameManager._instance.ConitnueHit(true);
+
+        if (!isInAttack)
+        {
+            AudioManager.Instance.PlaySound(0);
+            isInAttack = true;
+            if (isMiss)
+                GameManager._instance.ConitnueHit(true);
+            
+            
+            StartCoroutine(ChangePostAttack(isMiss));
+        }
+        //roleState = RoleState.PostAttack; // ÇÐ×´Ì¬
+
+    }
+
+    IEnumerator ChangePostAttack(bool isMiss)
+    {
+        int count = 2;
+        while (count > 0)
+        {
+            yield return new WaitForSeconds(0.01f);
+            count--;
+        }
+
         weapon.SetActive(false);
         roleState = RoleState.PostAttack;
-        move.y = isMiss ? attackSpeed*0.5f : attackSpeed;
+        move.y = isMiss ? attackSpeed * 0.5f : attackSpeed;
         attackEffect = true;
+        isInAttack = false;
     }
 
     public void Dead()
