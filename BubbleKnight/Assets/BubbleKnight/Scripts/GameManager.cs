@@ -133,6 +133,14 @@ public class GameManager : MonoBehaviour
 
     void GameEnd()
     {
+        if (state == GameState.Win)
+        {
+            AudioManager.Instance.PlaySound(5);
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound(6);
+        }
         Debug.Log("”Œœ∑Ω· ¯");
         LocalLeaderboard.instance.SaveScore((int)nowHeight);
         LocalLeaderboard.instance.ShowLeaderboard();
@@ -151,6 +159,7 @@ public class GameManager : MonoBehaviour
         continueHitTime ++;
         if (continueHitTime % 10 == 0)
         {
+            AudioManager.Instance.PlaySound(4);
             upSpeed += continueHitTime;
         }
 
