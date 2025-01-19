@@ -10,6 +10,8 @@ public class LocalLeaderboard : MonoBehaviour
 
     bool rankShow = false;
 
+    int hasRank = 0;
+
     void Awake()
     {
         if(instance == null)
@@ -27,7 +29,7 @@ public class LocalLeaderboard : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            ShowRank();
+            PlayerPrefs.DeleteAll();
         }
     }
 
@@ -35,7 +37,11 @@ public class LocalLeaderboard : MonoBehaviour
     {
         for (int i = 0; i < leaderboardTexts.Length; i++)
         {
-            UIManager.instance.rankUI.transform.GetChild(9 - i).GetComponent<TextMeshProUGUI>().text = leaderboardTexts[i];
+            if(9-i <= hasRank)
+            {
+                UIManager.instance.rankUI.transform.GetChild(9 - i).GetComponent<TextMeshProUGUI>().text = leaderboardTexts[i];
+            }
+            
         }
         UIManager.instance.rankUI.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = ((int)GameManager._instance.nowHeight).ToString();
 
@@ -85,6 +91,7 @@ public class LocalLeaderboard : MonoBehaviour
             }
             else
             {
+                hasRank = i - 1;
                 break;
             }
         }

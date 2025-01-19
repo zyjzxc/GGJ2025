@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public const int MAX_HEART = 5;
     public const float MAX_HEIGHT = 10000;
     public float nowHeight = 0;
+    public float nowTime = 0;
     public float upSpeed = 0;
     public int health = MAX_HEART;
 
@@ -50,6 +51,13 @@ public class GameManager : MonoBehaviour
     private int[] maxMonsterNum = { 5, 5, 5, 6, 6, 8, 8, 10, 10, 10};
     private float[] spawnIntervals = { 1f, 0.8f, 0.6f, 0.4f, 0.3f, 0.2f, 0.1f, 0.1f, 0.1f, 0.1f};
     private float[] slowSpeedGapTimes = { 0.3f, 0.3f, 0.25f, 0.25f, 0.2f, 0.15f, 0.1f, 0.05f, 0.04f, 0.02f};
+
+    private float[] gravity = { 0.1f, 0.1f, 0.2f, 0.2f, 0.2f, 0.2f, 0.25f, 0.25f, 0.25f, 0.25f };
+
+    public float GetGravity()
+    {
+        return gravity[nowLvl];
+    }
 
     public float GetSpawnInterval()
     {
@@ -123,6 +131,7 @@ public class GameManager : MonoBehaviour
     {
         continueHitTime = 0;
         nowHeight = 0;
+        nowTime = 0;
         health = MAX_HEART;
         UIManager.instance.SetHealth(health);
         nowLvl = 0;
@@ -136,6 +145,7 @@ public class GameManager : MonoBehaviour
         if (state == GameState.Win)
         {
             AudioManager.Instance.PlaySound(5);
+            LocalLeaderboard.instance.SaveScore((int)nowTime);
         }
         else
         {
@@ -143,7 +153,6 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log("”Œœ∑Ω· ¯");
         EndUI.SetActive(true);
-        LocalLeaderboard.instance.SaveScore((int)nowHeight);
         LocalLeaderboard.instance.ShowLeaderboard();
         EndText.GetComponent<TextMeshProUGUI>().text = state.ToString(); 
         upSpeed = 0;
@@ -169,6 +178,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (state != GameState.Running) return;
+
+        nowTime += Time.deltaTime;
 
         UIManager.instance.SetSpeed(upSpeed);
         UIManager.instance.SetTarget(nowHeight, MAX_HEIGHT);
