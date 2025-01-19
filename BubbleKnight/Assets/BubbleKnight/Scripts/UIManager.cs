@@ -22,6 +22,9 @@ public class UIManager : MonoBehaviour
     public GameObject targetUI;
 
     public GameObject progress;
+
+    public GameObject rankUI;
+
     private void Awake()
     {
         if (instance == null)
@@ -59,7 +62,6 @@ public class UIManager : MonoBehaviour
             if(i+1 > healthCount)
             {
                 healthUI[i].GetComponent<Image>().color = Color.black;
-                Debug.Log("修改血量成黑色");
             } else
             {
                 healthUI[i].GetComponent<Image>().color = Color.white;

@@ -17,7 +17,6 @@ public class Body : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ล๖นึ" + collision.name);
         if(collision.gameObject.layer == 7 || collision.gameObject.layer == 10)
         {
             GameManager._instance.TakeDamage();
