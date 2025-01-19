@@ -90,7 +90,7 @@ public class RoleControl : MonoBehaviour
 
         targetVelocity = move * maxSpeed;
         body.velocity = targetVelocity;
-        body.velocity += Physics2D.gravity * 0.2f;
+        body.velocity += Physics2D.gravity * GameManager._instance.GetGravity();
 
 
         Bound();
@@ -230,7 +230,8 @@ public class RoleControl : MonoBehaviour
         if (roleState == RoleState.Dead || GameManager._instance.IsGameEnd())
             return;
         AudioManager.Instance.PlaySound(0);
-        GameManager._instance.ConitnueHit(isMiss);
+        if (isMiss)
+            GameManager._instance.ConitnueHit(true);
         weapon.SetActive(false);
         roleState = RoleState.PostAttack;
         move.y = isMiss ? attackSpeed*0.5f : attackSpeed;

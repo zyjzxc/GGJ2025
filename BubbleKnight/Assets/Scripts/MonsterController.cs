@@ -57,7 +57,7 @@ public class MonsterController : MonoBehaviour
         //if (isHurted)
         //    return;
         if (monsterState == MonsterState.Dead) return;
-
+        GameManager._instance.ConitnueHit(false);
         health2--;
 
         if((GameManager._instance.continueHitTime + 1) % 10 == 0)
