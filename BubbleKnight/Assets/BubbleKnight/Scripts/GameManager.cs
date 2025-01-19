@@ -39,17 +39,17 @@ public class GameManager : MonoBehaviour
     public int nowLvl = 0;
 
     // 500, 1000, 1500, 2500, 4000, 6000, 1000
-    const int MAX_LVL = 7;
+    const int MAX_LVL = 9;
     public GameObject[] monsterPrefabs0;
     public GameObject[] monsterPrefabs1;
     public GameObject[] monsterPrefabs2;
     public GameObject[] monsterPrefabs3;
     public GameObject[] monsterPrefabs4;
-    private float[] levelHeight = { 200, 500, 1000, 1500, 2500, 4000, 6000, 10000};
-    private float [] dangerousSpeeds = {2, 5, 15, 30, 60, 80, 110, 150};
-    private int[] maxMonsterNum = { 5, 5, 5, 6, 6, 8, 8, 10, 10};
-    private float[] spawnIntervals = { 0.5f, 0.5f, 0.3f, 0.3f, 0.2f, 0.2f, 0.1f, 0.05f};
-    private float[] slowSpeedGapTimes = { 0.3f, 0.3f, 0.25f, 0.25f, 0.2f, 0.15f, 0.1f, 0.05f };
+    private float[] levelHeight = { 200, 500, 1000, 1500, 2500, 4000, 6000, 10000, 15000, 25000};
+    private float [] dangerousSpeeds = {2, 5, 15, 30, 60, 80, 110, 140, 180, 250};
+    private int[] maxMonsterNum = { 5, 5, 5, 6, 6, 8, 8, 10, 10, 10};
+    private float[] spawnIntervals = { 1f, 0.8f, 0.6f, 0.4f, 0.3f, 0.2f, 0.1f, 0.1f, 0.1f, 0.1f};
+    private float[] slowSpeedGapTimes = { 0.3f, 0.3f, 0.25f, 0.25f, 0.2f, 0.15f, 0.1f, 0.05f, 0.04f, 0.02f};
 
     public float GetSpawnInterval()
     {
@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
         if (continueHitTime % 10 == 0)
         {
             AudioManager.Instance.PlaySound(4);
-            upSpeed += continueHitTime;
+            upSpeed += MathF.Min(50, continueHitTime);
         }
 
     }
@@ -221,6 +221,7 @@ public class GameManager : MonoBehaviour
         health += sp;
         health = Mathf.Min(health, MAX_HEART);
         UIManager.instance.SetHealth(health);
+        AudioManager.Instance.PlaySound(8);
     }
 
     public void SlowDown()
