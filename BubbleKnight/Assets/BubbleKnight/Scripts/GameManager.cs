@@ -142,9 +142,9 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.PlaySound(6);
         }
         Debug.Log("”Œœ∑Ω· ¯");
+        EndUI.SetActive(true);
         LocalLeaderboard.instance.SaveScore((int)nowHeight);
         LocalLeaderboard.instance.ShowLeaderboard();
-        EndUI.SetActive(true);
         EndText.GetComponent<TextMeshProUGUI>().text = state.ToString(); 
         upSpeed = 0;
     }
