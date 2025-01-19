@@ -22,7 +22,12 @@ public class LocalLeaderboard : MonoBehaviour
 
     void Start()
     {
-        ShowLeaderboard();
+        //ShowLeaderboard();
+
+        for (int i = 0; i < 10; i++)
+        {
+            leaderboardTexts[i] = "0";
+        }
     }
 
     void Update()
@@ -30,7 +35,8 @@ public class LocalLeaderboard : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.T))
         //{
         //    PlayerPrefs.DeleteAll();
-        //} else if(Input.GetKeyDown(KeyCode.U))
+        //}
+        //else if (Input.GetKeyDown(KeyCode.U))
         //{
         //    SaveScore(10000);
         //}
@@ -38,10 +44,11 @@ public class LocalLeaderboard : MonoBehaviour
 
     void ShowRank()
     {
+        UIManager.instance.rankUI.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = ((int)GameManager._instance.nowHeight).ToString();
         for (int i = 0; i < leaderboardTexts.Length; i++)
         {
             int index = 9 - i;
-            if(i <= hasRank)
+            if(i < hasRank)
             {
                 float seconds = float.Parse(leaderboardTexts[i]);
                 int minutes = Mathf.FloorToInt(seconds / 60);
@@ -52,8 +59,6 @@ public class LocalLeaderboard : MonoBehaviour
             }
             
         }
-        UIManager.instance.rankUI.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = ((int)GameManager._instance.nowHeight).ToString();
-
     }
 
     // ´æ´¢Íæ¼Ò·ÖÊý
