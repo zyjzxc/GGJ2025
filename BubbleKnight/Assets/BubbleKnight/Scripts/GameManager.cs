@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject EndText;
 
     public const int MAX_HEART = 5;
-    public const float MAX_HEIGHT = 10000;
+    public const float MAX_HEIGHT = 25000;
     public float nowHeight = 0;
     public float nowTime = 0;
     public float upSpeed = 0;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] monsterPrefabs3;
     public GameObject[] monsterPrefabs4;
     private float[] levelHeight = { 200, 500, 1000, 1500, 2500, 4000, 6000, 10000, 15000, 25000};
-    private float [] dangerousSpeeds = {2, 5, 15, 30, 60, 80, 110, 140, 180, 250};
+    private float [] dangerousSpeeds = {2, 20, 40, 70, 100, 150, 250, 300, 350, 400};
     private int[] maxMonsterNum = { 5, 5, 5, 6, 6, 8, 8, 10, 10, 10};
     private float[] spawnIntervals = { 1f, 0.8f, 0.6f, 0.4f, 0.3f, 0.2f, 0.1f, 0.1f, 0.1f, 0.1f};
     private float[] slowSpeedGapTimes = { 0.3f, 0.3f, 0.25f, 0.25f, 0.2f, 0.15f, 0.1f, 0.05f, 0.04f, 0.02f};
@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
         continueHitTime ++;
         if (continueHitTime % 10 == 0)
         {
-            AudioManager.Instance.PlaySound(4);
+            //AudioManager.Instance.PlaySound(4);
             upSpeed += MathF.Min(50, continueHitTime);
         }
 

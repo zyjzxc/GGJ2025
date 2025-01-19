@@ -62,6 +62,7 @@ public class MonsterController : MonoBehaviour
 
         if((GameManager._instance.continueHitTime + 1) % 10 == 0)
         {
+            AudioManager.Instance.PlaySound(4);
             UIManager.instance.TipsText("Accelerate!!!", transform.position, 2, Color.red);
         } else
         {
