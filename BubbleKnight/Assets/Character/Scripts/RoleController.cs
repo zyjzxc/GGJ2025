@@ -217,8 +217,9 @@ public class RoleControl : MonoBehaviour
 
     public void StopAttack(bool isMiss)
     {
-        if (roleState == RoleState.Dead)
+        if (roleState == RoleState.Dead || GameManager._instance.IsGameEnd())
             return;
+        AudioManager.Instance.PlaySound(0);
         GameManager._instance.ConitnueHit(isMiss);
         weapon.SetActive(false);
         roleState = RoleState.PostAttack;

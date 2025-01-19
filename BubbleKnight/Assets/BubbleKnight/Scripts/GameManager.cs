@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] monsterPrefabs3;
     public GameObject[] monsterPrefabs4;
     private float[] levelHeight = { 200, 500, 1000, 1500, 2500, 4000, 6000, 10000};
-    private float [] dangerousSpeeds = {2, 5, 15, 30, 60, 80, 120, 170};
+    private float [] dangerousSpeeds = {2, 5, 15, 30, 60, 80, 110, 150};
     private int[] maxMonsterNum = { 5, 5, 5, 6, 6, 8, 8, 10, 10};
     private float[] spawnIntervals = { 0.5f, 0.5f, 0.3f, 0.3f, 0.2f, 0.2f, 0.1f, 0.05f};
     private float[] slowSpeedGapTimes = { 0.3f, 0.3f, 0.25f, 0.25f, 0.2f, 0.15f, 0.1f, 0.05f };
@@ -91,6 +91,11 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
+
+    public bool IsGameEnd()
+    {
+        return state != GameState.Running;
     }
 
     void Start()
@@ -211,8 +216,10 @@ public class GameManager : MonoBehaviour
 
     public void TakeDamage()
     {
+        if (IsGameEnd()) return;
         if (roleControl.isWuDi == true)
             return;
+        AudioManager.Instance.PlaySound(1);
         health--;
         UIManager.instance.SetHealth(health);
         if (health == 0)

@@ -58,9 +58,11 @@ public class MonsterController : MonoBehaviour
         UIManager.instance.TipsText((GameManager._instance.continueHitTime + 1) + " Hit", transform.position);
         if (health2 <= 0)
         {
+            AudioManager.Instance.PlaySound(3);
             Die();
         } else
         {
+            AudioManager.Instance.PlaySound(2);
             Color c = GetComponent<SpriteRenderer>().color;
             GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, c.a / 2);
         }
