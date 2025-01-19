@@ -32,32 +32,64 @@ public class LocalLeaderboard : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.T))
-        //{
-        //    PlayerPrefs.DeleteAll();
-        //}
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            PlayerPrefs.DeleteAll();
+        }
         //else if (Input.GetKeyDown(KeyCode.U))
         //{
         //    SaveScore(10000);
         //}
     }
 
-    void ShowRank()
+    public void ShowRank()
     {
+        //ShowLeaderboard();
         UIManager.instance.rankUI.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = ((int)GameManager._instance.nowHeight).ToString();
-        for (int i = 0; i < leaderboardTexts.Length; i++)
-        {
-            int index = 9 - i;
-            if(i < hasRank)
-            {
-                float seconds = float.Parse(leaderboardTexts[i]);
-                int minutes = Mathf.FloorToInt(seconds / 60);
-                int secs = Mathf.FloorToInt(seconds % 60);
-                string str = string.Format("{0:00}:{1:00}", minutes, secs);
 
-                UIManager.instance.rankUI.transform.GetChild(index).GetComponent<TextMeshProUGUI>().text = "Rank " + (i + 1) + ": " + str;
+
+
+        if(PlayerPrefs.HasKey("BastTime"))
+        {
+            float seconds = PlayerPrefs.GetFloat("BastTime");
+            int minutes = Mathf.FloorToInt(seconds / 60);
+            int secs = Mathf.FloorToInt(seconds % 60);
+            string str = string.Format("{0:00}:{1:00}", minutes, secs);
+            UIManager.instance.rankUI.transform.Find("BaseTime").GetComponent<TextMeshProUGUI>().text = str;
+        } else
+        {
+            UIManager.instance.rankUI.transform.Find("BaseTime").GetComponent<TextMeshProUGUI>().text = "NoBody";
+        }
+
+        
+        //for (int i = 0; i < leaderboardTexts.Length; i++)
+        //{
+        //    int index = 9 - i;
+        //    if(i < hasRank)
+        //    {
+        //        float seconds = float.Parse(leaderboardTexts[i]);
+        //        int minutes = Mathf.FloorToInt(seconds / 60);
+        //        int secs = Mathf.FloorToInt(seconds % 60);
+        //        string str = string.Format("{0:00}:{1:00}", minutes, secs);
+
+        //        UIManager.instance.rankUI.transform.GetChild(index).GetComponent<TextMeshProUGUI>().text = "Rank " + (i + 1) + ": " + str;
+        //    }
+
+        //}
+    }
+
+    public void SaveBestTime(float score)
+    {
+        if (!PlayerPrefs.HasKey("BastTime"))
+        {
+            PlayerPrefs.SetFloat("BastTime", score);
+        } else
+        {
+            float t = PlayerPrefs.GetFloat("BastTime");
+            if(t > score)
+            {
+                PlayerPrefs.SetFloat("BastTime", score);
             }
-            
         }
     }
 
@@ -87,6 +119,7 @@ public class LocalLeaderboard : MonoBehaviour
                 }
             }
         }
+        ShowLeaderboard();
     }
 
 
@@ -109,8 +142,6 @@ public class LocalLeaderboard : MonoBehaviour
                 break;
             }
         }
-
-        ShowRank();
     }
 
 

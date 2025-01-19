@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         if (state == GameState.Win)
         {
             AudioManager.Instance.PlaySound(5);
-            LocalLeaderboard.instance.SaveScore(nowTime);
+            LocalLeaderboard.instance.SaveBestTime(nowTime);
         }
         else
         {
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log("”Œœ∑Ω· ¯");
         EndUI.SetActive(true);
-        LocalLeaderboard.instance.ShowLeaderboard();
+        LocalLeaderboard.instance.ShowRank();
         EndText.GetComponent<TextMeshProUGUI>().text = state.ToString(); 
         upSpeed = 0;
     }
